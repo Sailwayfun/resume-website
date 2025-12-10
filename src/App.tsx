@@ -110,7 +110,6 @@ function App() {
           locationValue={t('meta-location-value')}
           contactLabel={t('meta-contact-label')}
           contactEmail={t('contact-email')}
-          contactPhone={t('contact-phone')}
           titleLabel={t('meta-title-label')}
           titleValue={t('meta-title-value')}
           langLabel={t('meta-lang-label')}
@@ -150,7 +149,7 @@ function App() {
               <p className="text-[13px] text-[var(--muted)] m-0 mb-1">
                 {t('footer-contact-label')}
               </p>
-              <ContactLines email={t('contact-email')} phone={t('contact-phone')} />
+              <ContactLines email={t('contact-email')} />
             </div>
           </div>
           <div
