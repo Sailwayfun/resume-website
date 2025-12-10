@@ -4,8 +4,7 @@ export const fallbackTranslations: Translations = {
   zh: {
     eyebrow: 'Front-end Engineer · 4-5 年經驗',
     'hero-name': '廖偉帆 <span class="sub">Sail Liao</span>',
-    lede:
-      '使用 Next.js、React、Vue 與 TypeScript 打造後臺、桌面工具與瀏覽器插件。熟悉 UI 開發、狀態管理、Mock API 與前後端協作，樂於將需求轉化成流暢的互動體驗。',
+    lede: '使用 Next.js、React、Vue 與 TypeScript 打造後臺、桌面工具與瀏覽器插件。熟悉 UI 開發、狀態管理、Mock API 與前後端協作，樂於將需求轉化成流暢的互動體驗。',
     'meta-location-label': '所在地',
     'meta-location-value': '新北市汐止區',
     'meta-contact-label': '聯絡',
@@ -69,8 +68,7 @@ export const fallbackTranslations: Translations = {
   en: {
     eyebrow: 'Front-end Engineer · 4-5 yrs experience',
     'hero-name': 'Wei-Fan Liao <span class="sub">Sail Liao</span>',
-    lede:
-      'Front-end engineer building dashboards, desktop tools, and browser extensions with Next.js, React, Vue, and TypeScript. Enjoys UI implementation, state management, mock APIs, and tight collaboration with backend teams.',
+    lede: 'Front-end engineer building dashboards, desktop tools, and browser extensions with Next.js, React, Vue, and TypeScript. Enjoys UI implementation, state management, mock APIs, and tight collaboration with backend teams.',
     'meta-location-label': 'Location',
     'meta-location-value': 'Xizhi, New Taipei',
     'meta-contact-label': 'Contact',
@@ -82,9 +80,11 @@ export const fallbackTranslations: Translations = {
     'meta-lang-value': 'English TOEIC 985 · Intermediate Taiwanese',
     'cta-primary': 'Email me',
     'skills-title': 'Core Skills',
-    'skills-desc': 'Build maintainable front-end architecture and ship interfaces quickly with aligned APIs.',
+    'skills-desc':
+      'Build maintainable front-end architecture and ship interfaces quickly with aligned APIs.',
     'exp-title': 'Experience',
-    'exp-desc': 'Led or contributed to admin consoles, internal systems, desktop tools, and browser extensions.',
+    'exp-desc':
+      'Led or contributed to admin consoles, internal systems, desktop tools, and browser extensions.',
     'exp1-time': '2024/4 - Present',
     'exp1-place': 'Taipei · Block Tech Co., Ltd.',
     'exp1-role': 'Front-end Engineer',
@@ -105,7 +105,8 @@ export const fallbackTranslations: Translations = {
     'exp4-role': 'English Tutor / Essay Reviewer',
     'exp4-desc': 'Helped students solve English questions and provided feedback on essays.',
     'proj-title': 'Projects',
-    'proj-desc': 'Personal and commercial-facing builds focused on data flow, interactions, and deployment.',
+    'proj-desc':
+      'Personal and commercial-facing builds focused on data flow, interactions, and deployment.',
     'proj1-time': '2023/11 - Ongoing',
     'proj1-title': 'Tabsence · Chrome Extension',
     'proj1-desc':
@@ -121,7 +122,8 @@ export const fallbackTranslations: Translations = {
     'edu1-desc': 'B.A. focused on linguistics and cross-cultural communication.',
     'edu2-label': 'Language Proficiency',
     'edu2-title': 'English TOEIC 985 · Mandarin, Taiwanese',
-    'edu2-desc': 'Fluent in reading/writing/speaking; comfortable drafting technical and product docs.',
+    'edu2-desc':
+      'Fluent in reading/writing/speaking; comfortable drafting technical and product docs.',
     'footer-contact-label': 'Contact',
     'footer-role-label': 'Preferred Roles / Location',
     'footer-role-value': 'Front-end Engineer / Software Engineer · Taipei / New Taipei / Remote',
