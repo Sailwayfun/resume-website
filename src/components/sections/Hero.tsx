@@ -10,7 +10,6 @@ interface HeroProps {
   locationValue: string;
   contactLabel: string;
   contactEmail: string;
-  contactPhone: string;
   titleLabel: string;
   titleValue: string;
   langLabel: string;
@@ -113,7 +112,6 @@ export const Hero: FC<HeroProps> = ({
   locationValue,
   contactLabel,
   contactEmail,
-  contactPhone,
   titleLabel,
   titleValue,
   langLabel,
@@ -164,7 +162,7 @@ export const Hero: FC<HeroProps> = ({
           </IconBadge>
           <div>
             <p className="text-[13px] text-[var(--muted)] m-0 mb-1">{contactLabel}</p>
-            <ContactLines email={contactEmail} phone={contactPhone} />
+            <ContactLines email={contactEmail} />
           </div>
         </div>
         <div
