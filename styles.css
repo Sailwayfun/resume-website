@@ -344,6 +344,12 @@ h1 .sub {
   display: block;
 }
 
+.chip-svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
 @keyframes slide {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
