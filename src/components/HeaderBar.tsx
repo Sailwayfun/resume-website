@@ -86,13 +86,18 @@ export function HeaderBar({ theme, lang, nav, toggleTheme, toggleLang, onPrint }
           <span aria-hidden="true">{theme === 'light' ? '☀️' : '🌙'}</span>
         </button>
         <button
-          className="w-28 h-10 grid place-items-center rounded-xl border text-sm font-semibold transition hover:-translate-y-[1px]"
+          className="h-10 px-3 inline-flex items-center gap-2 rounded-xl border transition hover:-translate-y-[1px]"
           style={baseButtonStyle}
           type="button"
           aria-label="下載 PDF"
-          onClick={onPrint}
-        >
-          下載 PDF
+          title="下載 PDF"
+          onClick={onPrint}>
+          <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 3.5A1.5 1.5 0 0 1 7.5 2h9A1.5 1.5 0 0 1 18 3.5v7.38a1 1 0 0 1-2 0V4H8v6.88a1 1 0 0 1-2 0V3.5Z" />
+            <path d="M11.47 20.78a.75.75 0 0 0 1.06 0l3.25-3.25a.75.75 0 0 0-1.06-1.06l-1.97 1.97V11a.75.75 0 0 0-1.5 0v7.44l-1.95-1.97a.75.75 0 0 0-1.06 1.06l3.23 3.25Z" />
+            <path d="M5 21.25a.75.75 0 0 1 .75-.75h12.5a.75.75 0 0 1 0 1.5H5.75A.75.75 0 0 1 5 21.25Z" />
+          </svg>
+          <span className="text-sm font-semibold">PDF</span>
         </button>
       </div>
     </header>
