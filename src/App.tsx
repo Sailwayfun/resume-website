@@ -1,4 +1,3 @@
-import './styles.css';
 import { ContactLines } from './components/ContactLines';
 import { Education } from './components/sections/Education';
 import { Experience } from './components/sections/Experience';
@@ -70,32 +69,64 @@ function App() {
 
   return (
     <>
-      <div className="bg-gradient"></div>
-      <div className="page-shell">
-        <header className="top-bar">
-          <div className="brand">Sail Liao</div>
-          <nav className="nav-links">
-            <a href="#experience">{t('nav-experience') || '經歷'}</a>
-            <a href="#projects">{t('nav-projects') || '專案'}</a>
-            <a href="#skills">{t('nav-skills') || '技能'}</a>
-            <a href="#education">{t('nav-education') || '學歷'}</a>
+      <div className="fixed inset-0 bg-gradient-to-br from-[rgba(77,212,182,0.08)] to-[rgba(55,107,255,0.05)] blur-[40px] opacity-90 pointer-events-none z-0"></div>
+      <div className="relative z-10 max-w-[1080px] mx-auto px-7 pb-16 pt-12">
+        <header
+          className="sticky top-0 backdrop-blur-md border rounded-full px-5 py-3 mb-7 flex items-center gap-4 justify-between shadow-[0_8px_24px_rgba(0,0,0,0.35)]"
+          style={{ background: 'var(--panel)', borderColor: 'var(--border)' }}>
+          <div className="font-bold tracking-[0.04em] uppercase">Sail Liao</div>
+          <nav className="flex gap-3 flex-1 justify-center flex-wrap">
+            <a className="px-3 py-2 rounded-full text-[var(--muted)] hover:text-[var(--accent-strong)] hover:bg-[rgba(255,255,255,0.04)] transition" href="#experience">
+              {t('nav-experience') || '經歷'}
+            </a>
+            <a className="px-3 py-2 rounded-full text-[var(--muted)] hover:text-[var(--accent-strong)] hover:bg-[rgba(255,255,255,0.04)] transition" href="#projects">
+              {t('nav-projects') || '專案'}
+            </a>
+            <a className="px-3 py-2 rounded-full text-[var(--muted)] hover:text-[var(--accent-strong)] hover:bg-[rgba(255,255,255,0.04)] transition" href="#skills">
+              {t('nav-skills') || '技能'}
+            </a>
+            <a className="px-3 py-2 rounded-full text-[var(--muted)] hover:text-[var(--accent-strong)] hover:bg-[rgba(255,255,255,0.04)] transition" href="#education">
+              {t('nav-education') || '學歷'}
+            </a>
           </nav>
-          <div className="icon-links" aria-label="社群連結">
-            <a className="icon-pill" href="https://github.com/Sailwayfun" target="_blank" rel="noreferrer" aria-label="GitHub">
+          <div className="flex items-center gap-2" aria-label="社群連結">
+            <a
+              className="w-9 h-9 grid place-items-center rounded-xl border text-[var(--text)] transition hover:-translate-y-[1px]"
+              style={{ borderColor: 'var(--border)', background: 'rgba(255,255,255,0.04)' }}
+              href="https://github.com/Sailwayfun"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub">
               <svg viewBox="0 0 24 24">
                 <path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.9 9.6.5.1.6-.2.6-.4v-1.5c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.7 2.5 1.2 3.1.9.1-.7.4-1.2.7-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2.1 1-2.9-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1 .8-.2 1.7-.3 2.5-.3.9 0 1.7.1 2.5.3 2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.7.8 1 1.8 1 2.9 0 3.9-2.4 4.7-4.6 5 .4.3.8 1 .8 2.1v3.1c0 .2.1.5.6.4 4-1.3 6.9-5.1 6.9-9.6C22 6.6 17.5 2 12 2Z" />
               </svg>
             </a>
-            <a className="icon-pill" href="https://www.linkedin.com/in/sailliaodev/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <a
+              className="w-9 h-9 grid place-items-center rounded-xl border text-[var(--text)] transition hover:-translate-y-[1px]"
+              style={{ borderColor: 'var(--border)', background: 'rgba(255,255,255,0.04)' }}
+              href="https://www.linkedin.com/in/sailliaodev/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn">
               <svg viewBox="0 0 24 24">
                 <path d="M20.4 3H3.6C3.3 3 3 3.3 3 3.7v16.6c0 .4.3.7.7.7h16.6c.4 0 .7-.3.7-.7V3.7c0-.4-.3-.7-.7-.7ZM8.6 18.4H6V9.9h2.6v8.5Zm-1.3-9.8c-.8 0-1.3-.6-1.3-1.3 0-.8.6-1.4 1.4-1.4.8 0 1.3.6 1.3 1.4 0 .7-.5 1.3-1.4 1.3Zm11.1 9.8h-2.6v-4.5c0-1.2-.4-2.1-1.5-2.1-.8 0-1.2.5-1.5 1-.1.2-.1.5-.1.8v4.8H10V9.9h2.5v1.2c.3-.4.9-1.3 2.2-1.3 1.6 0 2.9 1 2.9 3.4v5.2Z" />
               </svg>
             </a>
-            <button className="icon-pill toggle-pill" type="button" aria-label="切換語言" onClick={toggleLang}>
+            <button
+              className="w-11 h-9 grid place-items-center rounded-xl border text-sm font-semibold transition hover:-translate-y-[1px]"
+              style={{ borderColor: 'var(--border)', background: 'rgba(255,255,255,0.04)', color: 'var(--text)' }}
+              type="button"
+              aria-label="切換語言"
+              onClick={toggleLang}>
               {lang === 'en' ? '中' : 'EN'}
             </button>
-            <button className="icon-pill toggle-pill" type="button" aria-label="切換明暗模式" onClick={toggleTheme}>
-              <span className="toggle-icon" aria-hidden="true">{theme === 'light' ? '☀️' : '🌙'}</span>
+            <button
+              className="w-11 h-9 grid place-items-center rounded-xl border text-base transition hover:-translate-y-[1px]"
+              style={{ borderColor: 'var(--border)', background: 'rgba(255,255,255,0.04)', color: 'var(--text)' }}
+              type="button"
+              aria-label="切換明暗模式"
+              onClick={toggleTheme}>
+              <span aria-hidden="true">{theme === 'light' ? '☀️' : '🌙'}</span>
             </button>
           </div>
         </header>
@@ -124,31 +155,43 @@ function App() {
 
         <Education title={t('edu-title')} desc={t('edu-desc')} items={educationItems} />
 
-        <footer className="footer">
-          <div className="meta-item flat">
-            <div className="meta-icon" aria-hidden="true">
+        <footer
+          className="mt-8 border rounded-xl p-5 flex flex-wrap gap-3 items-center shadow-[var(--shadow)]"
+          style={{ background: 'rgba(255,255,255,0.02)', borderColor: 'var(--border)', color: 'var(--muted)' }}>
+          <div
+            className="flex items-center gap-3 px-3 py-3 rounded-xl"
+            style={{ border: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.02)' }}>
+            <div
+              className="w-7 h-7 grid place-items-center rounded-lg"
+              style={{ background: 'rgba(77,212,182,0.12)', border: '1px solid rgba(77,212,182,0.24)' }}
+              aria-hidden="true">
               <svg viewBox="0 0 24 24">
                 <path d="M4.5 6.2 10 10c1.2.8 2.8.8 4 0l5.5-3.8c.3-.2.5-.5.5-.9 0-.7-.6-1.3-1.3-1.3H5.3C4.6 4 4 4.6 4 5.3c0 .3.2.7.5.9ZM20 8.3l-4.7 3.3a4.8 4.8 0 0 1-5.6 0L5 8.3V16c0 1 .8 1.8 1.8 1.8h11.4c1 0 1.8-.8 1.8-1.8V8.3Z" />
               </svg>
             </div>
             <div>
-              <p className="label">{t('footer-contact-label')}</p>
+              <p className="text-[13px] text-[var(--muted)] m-0 mb-1">{t('footer-contact-label')}</p>
               <ContactLines email={t('contact-email')} phone={t('contact-phone')} />
             </div>
           </div>
-          <div className="meta-item flat">
-            <div className="meta-icon" aria-hidden="true">
+          <div
+            className="flex items-center gap-3 px-3 py-3 rounded-xl"
+            style={{ border: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.02)' }}>
+            <div
+              className="w-7 h-7 grid place-items-center rounded-lg"
+              style={{ background: 'rgba(77,212,182,0.12)', border: '1px solid rgba(77,212,182,0.24)' }}
+              aria-hidden="true">
               <svg viewBox="0 0 24 24">
                 <path d="M12 2.5c-3.5 0-6.5 2.8-6.5 6.4 0 4.9 6.5 12.6 6.5 12.6s6.5-7.7 6.5-12.6c0-3.6-3-6.4-6.5-6.4Zm0 9.2a2.8 2.8 0 1 1 0-5.6 2.8 2.8 0 0 1 0 5.6Z" />
               </svg>
             </div>
             <div>
-              <p className="label">{t('footer-role-label')}</p>
-              <p className="value">{t('footer-role-value')}</p>
+              <p className="text-[13px] text-[var(--muted)] m-0 mb-1">{t('footer-role-label')}</p>
+              <p className="m-0 font-semibold leading-6 text-[var(--text)]">{t('footer-role-value')}</p>
             </div>
           </div>
+          <p className="m-0 ml-auto text-[var(--muted)]">{t('footer-update')}</p>
         </footer>
-        <p className="muted footer-note">{t('footer-update')}</p>
       </div>
     </>
   );
