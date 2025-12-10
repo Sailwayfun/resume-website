@@ -18,6 +18,93 @@ interface HeroProps {
   ctaLabel: string;
 }
 
+function SailSvg() {
+  return (
+    <div className="pointer-events-none absolute -right-10 -bottom-12 opacity-40">
+      <svg
+        width="360"
+        height="280"
+        viewBox="0 0 360 280"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient
+            id="junk-sail-a"
+            x1="50"
+            y1="12"
+            x2="200"
+            y2="200"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="var(--accent-strong)" stopOpacity="0.96" />
+            <stop offset="1" stopColor="var(--accent)" stopOpacity="0.28" />
+          </linearGradient>
+          <linearGradient
+            id="junk-sail-b"
+            x1="140"
+            y1="26"
+            x2="300"
+            y2="200"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="var(--accent-strong)" stopOpacity="0.88" />
+            <stop offset="1" stopColor="var(--accent)" stopOpacity="0.22" />
+          </linearGradient>
+          <linearGradient
+            id="junk-hull"
+            x1="150"
+            y1="212"
+            x2="280"
+            y2="234"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="var(--accent-strong)" stopOpacity="0.7" />
+            <stop offset="1" stopColor="var(--accent)" stopOpacity="0.35" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M150 26c-1 0-2 .4-2.6 1l-66 94c-.7.9-.1 2.2.9 2.3l68 11.5c1 .2 2-.6 2-1.6V28c0-1.1-.9-2-2-2Z"
+          fill="url(#junk-sail-a)"
+        />
+        <path
+          d="M198 36c0-1 .8-1.8 1.8-1.6l86 18c.9.2 1.6 1 1.6 1.9v106c0 1.3-1.5 2.2-2.8 1.6l-86-44c-.6-.3-.9-.9-.9-1.6V36Z"
+          fill="url(#junk-sail-b)"
+        />
+        <path d="M126 96c34 7 94 6 140-14" stroke="rgba(233,236,245,0.42)" strokeWidth="2.4" />
+        <path d="M118 112c38 7.5 102 10 154-10" stroke="rgba(233,236,245,0.36)" strokeWidth="2.4" />
+        <path d="M110 128c40 8.5 112 16 166-6" stroke="rgba(233,236,245,0.32)" strokeWidth="2.2" />
+        <path d="M104 144c42 9 120 22 178-2" stroke="rgba(233,236,245,0.26)" strokeWidth="2.1" />
+        <path d="M98 160c44 9.5 128 28 190 8" stroke="rgba(233,236,245,0.2)" strokeWidth="2" />
+        <path
+          d="M152 96v120"
+          stroke="rgba(233,236,245,0.9)"
+          strokeWidth="3.3"
+          strokeLinecap="round"
+        />
+        <path
+          d="M170 208h114c1.3 0 1.7 1.7.5 2.3-36 15-74.6 20.5-116.6 16-14-1.5-29.2-5.8-48.2-9.6-1.4-.3-1.5-2.3-.1-2.8 21.6-5.2 35.8-6.1 49.4-5.9Z"
+          fill="url(#junk-hull)"
+        />
+        <circle cx="152" cy="96" r="5.2" fill="rgba(233,236,245,0.95)" />
+        <circle cx="254" cy="168" r="3.6" fill="rgba(233,236,245,0.95)" />
+        <path
+          d="M116 220c40 14.5 110 24 182-6"
+          stroke="rgba(125,240,218,0.34)"
+          strokeWidth="4.2"
+          strokeLinecap="round"
+        />
+        <path
+          d="M104 238c36 13 126 22 206-6"
+          stroke="rgba(125,240,218,0.2)"
+          strokeWidth="3.4"
+          strokeLinecap="round"
+        />
+      </svg>
+    </div>
+  );
+}
+
 export const Hero: FC<HeroProps> = ({
   eyebrow,
   nameHtml,
@@ -38,9 +125,10 @@ export const Hero: FC<HeroProps> = ({
   return (
     <section
       id="top"
-      className="bg-[rgba(255,255,255,0.02)] border rounded-[28px] p-7 shadow-[var(--shadow)]"
+      className="relative overflow-hidden bg-[rgba(255,255,255,0.02)] border rounded-[28px] p-7 shadow-[var(--shadow)]"
       style={{ borderColor: 'var(--border)' }}
     >
+      <SailSvg />
       <p
         className="text-[13px] font-semibold tracking-[0.05em] uppercase text-[var(--accent-strong)] mb-2"
         dangerouslySetInnerHTML={{ __html: eyebrow }}
