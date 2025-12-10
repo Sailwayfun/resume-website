@@ -60,6 +60,13 @@
           </a>
           <button
             class="icon-pill toggle-pill"
+            id="lang-toggle"
+            type="button"
+            aria-label="切換語言">
+            EN
+          </button>
+          <button
+            class="icon-pill toggle-pill"
             id="theme-toggle"
             type="button"
             aria-label="切換明暗模式">
@@ -69,12 +76,11 @@
       </header>
 
       <section class="hero" id="top">
-        <p class="eyebrow">Front-end Engineer · 1-2 年經驗</p>
-        <h1>廖偉帆 <span class="sub">Sail Liao</span></h1>
-        <p class="lede">
-          使用 Next.js、React、Vue 與 TypeScript
-          打造後臺、桌面工具與瀏覽器插件。熟悉 UI 開發、狀態管理、Mock API
-          與前後端協作，樂於將需求轉化成流暢的互動體驗。
+        <p class="eyebrow" data-i18n="eyebrow">Front-end Engineer · 4-5 年經驗</p>
+        <h1 data-i18n-html="hero-name">廖偉帆 <span class="sub">Sail Liao</span></h1>
+        <p class="lede" data-i18n="lede">
+          使用 Next.js、React、Vue 與 TypeScript 打造後臺、桌面工具與瀏覽器插件。熟悉 UI
+          開發、狀態管理、Mock API 與前後端協作，樂於將需求轉化成流暢的互動體驗。
         </p>
         <div class="meta-row">
           <div class="meta-item">
@@ -85,8 +91,8 @@
               </svg>
             </div>
             <div>
-              <p class="label">所在地</p>
-              <p class="value">新北市汐止區</p>
+              <p class="label" data-i18n="meta-location-label">所在地</p>
+              <p class="value" data-i18n="meta-location-value">新北市汐止區</p>
             </div>
           </div>
           <div class="meta-item">
@@ -97,8 +103,8 @@
               </svg>
             </div>
             <div>
-              <p class="label">聯絡</p>
-              <p class="value">liaoleon000513@gmail.com ・ 0937-941-020</p>
+              <p class="label" data-i18n="meta-contact-label">聯絡</p>
+              <p class="value" data-i18n="meta-contact-value">liaoleon000513@gmail.com ・ 0937-941-020</p>
             </div>
           </div>
           <div class="meta-item">
@@ -109,8 +115,8 @@
               </svg>
             </div>
             <div>
-              <p class="label">目標職稱</p>
-              <p class="value">前端工程師 / 軟體工程師</p>
+              <p class="label" data-i18n="meta-title-label">目標職稱</p>
+              <p class="value" data-i18n="meta-title-value">前端工程師 / 軟體工程師</p>
             </div>
           </div>
           <div class="meta-item">
@@ -121,20 +127,20 @@
               </svg>
             </div>
             <div>
-              <p class="label">語言</p>
-              <p class="value">英語 TOEIC 985 ・ 臺語中等</p>
+              <p class="label" data-i18n="meta-lang-label">語言</p>
+              <p class="value" data-i18n="meta-lang-value">英語 TOEIC 985 ・ 臺語中等</p>
             </div>
           </div>
         </div>
         <div class="cta-row">
-          <a class="primary" href="mailto:liaoleon000513@gmail.com">寫信給我</a>
+          <a class="primary" href="mailto:liaoleon000513@gmail.com" data-i18n="cta-primary">寫信給我</a>
         </div>
       </section>
 
       <section class="section" id="skills">
         <div class="section-head">
-          <h2>核心技能</h2>
-          <p>打造可維護的前端架構、快速還原設計並確保串接效率。</p>
+          <h2 data-i18n="skills-title">核心技能</h2>
+          <p data-i18n="skills-desc">打造可維護的前端架構、快速還原設計並確保串接效率。</p>
         </div>
         <div class="tech-strip" aria-label="技術堆疊">
           <div class="tech-row">
@@ -443,103 +449,78 @@
 
       <section class="section" id="experience">
         <div class="section-head">
-          <h2>工作經歷</h2>
-          <p>帶領或參與後臺、管理系統、桌面工具與瀏覽器插件的前端開發。</p>
+          <h2 data-i18n="exp-title">工作經歷</h2>
+          <p data-i18n="exp-desc">帶領或參與後臺、管理系統、桌面工具與瀏覽器插件的前端開發。</p>
         </div>
         <div class="timeline">
           <article class="exp-card">
             <div class="exp-meta">
-              <p class="label">2024/4 - 現在</p>
-              <p class="label">臺北 · 區塊科技股份有限公司</p>
+              <p class="label" data-i18n="exp1-time">2024/4 - 現在</p>
+              <p class="label" data-i18n="exp1-place">臺北 · 區塊科技股份有限公司</p>
             </div>
-            <h3>網頁前端工程師</h3>
-            <ul>
-              <li>
-                以 Next.js App Router 打造 HyperLedger 區塊鏈管理平臺，Tailwind
-                CSS 搭配 Figma Claude MCP 加速 UI 實作。
-              </li>
-              <li>
-                使用 MSW 建立模擬 API，並與後端透過 Swagger UI
-                對齊資料格式，降低正式串接成本。
-              </li>
-              <li>
-                以 Vue.js + Pinia
-                開發內部人員/案件管理系統，支援狀態同步與配置調整。
-              </li>
-              <li>
-                運用 Postman Mock Server、jQuery、Electron.js
-                產出內部工具，提升蒐證與流程效率。
-              </li>
+            <h3 data-i18n="exp1-role">網頁前端工程師</h3>
+            <ul data-i18n-html="exp1-list">
+              <li>以 Next.js App Router 打造 HyperLedger 區塊鏈管理平臺，Tailwind CSS 搭配 Figma Claude MCP 加速 UI 實作。</li>
+              <li>使用 MSW 建立模擬 API，並與後端透過 Swagger UI 對齊資料格式，降低正式串接成本。</li>
+              <li>以 Vue.js + Pinia 開發內部人員/案件管理系統，支援狀態同步與配置調整。</li>
+              <li>運用 Postman Mock Server、jQuery、Electron.js 產出內部工具，提升蒐證與流程效率。</li>
             </ul>
           </article>
 
           <article class="exp-card">
             <div class="exp-meta">
-              <p class="label">2023/8 - 2024/1</p>
-              <p class="label">臺北 · AppWorks School</p>
+              <p class="label" data-i18n="exp2-time">2023/8 - 2024/1</p>
+              <p class="label" data-i18n="exp2-place">臺北 · AppWorks School</p>
             </div>
-            <h3>前端工程師（培訓實戰）</h3>
-            <ul>
-              <li>
-                4 週內以 React、styled-components
-                開發電商網站，含輪播、購物車、無限滾動等互動功能。
-              </li>
-              <li>
-                5 週內自製 Chrome Extension，採 TypeScript + Zustand +
-                Tailwind，強化靜態型別與狀態管理。
-              </li>
-              <li>
-                協助工作坊導入 Tailwind，並在一週內與
-                iOS/後端協作完成電商功能擴充。
-              </li>
+            <h3 data-i18n="exp2-role">前端工程師（培訓實戰）</h3>
+            <ul data-i18n-html="exp2-list">
+              <li>4 週內以 React、styled-components 開發電商網站，含輪播、購物車、無限滾動等互動功能。</li>
+              <li>5 週內自製 Chrome Extension，採 TypeScript + Zustand + Tailwind，強化靜態型別與狀態管理。</li>
+              <li>協助工作坊導入 Tailwind，並在一週內與 iOS/後端協作完成電商功能擴充。</li>
             </ul>
           </article>
 
           <article class="exp-card">
             <div class="exp-meta">
-              <p class="label">2019/3 - 2023/8</p>
-              <p class="label">臺北 · 三民書局</p>
+              <p class="label" data-i18n="exp3-time">2019/3 - 2023/8</p>
+              <p class="label" data-i18n="exp3-place">臺北 · 三民書局</p>
             </div>
-            <h3>高中英文教科書文字編輯</h3>
-            <ul>
-              <li>
-                維護教材內容、上架至 App
-                並同步改版，協調邀稿與審稿流程，確保時程與品質。
-              </li>
+            <h3 data-i18n="exp3-role">高中英文教科書文字編輯</h3>
+            <ul data-i18n-html="exp3-list">
+              <li>維護教材內容、上架至 App 並同步改版，協調邀稿與審稿流程，確保時程與品質。</li>
               <li>經營高中高職 YouTube 頻道，管理影片上下架與首頁版面。</li>
             </ul>
           </article>
 
           <article class="exp-card compact">
             <div class="exp-meta">
-              <p class="label">2016/8 - 2018/11</p>
-              <p class="label">臺大文理補習班</p>
+              <p class="label" data-i18n="exp4-time">2016/8 - 2018/11</p>
+              <p class="label" data-i18n="exp4-place">臺大文理補習班</p>
             </div>
-            <h3>解題老師／閱卷人員</h3>
-            <p class="muted">協助高中生英文解題與作文批改，提供技巧回饋。</p>
+            <h3 data-i18n="exp4-role">解題老師／閱卷人員</h3>
+            <p class="muted" data-i18n="exp4-desc">協助高中生英文解題與作文批改，提供技巧回饋。</p>
           </article>
         </div>
       </section>
 
       <section class="section" id="projects">
         <div class="section-head">
-          <h2>專案成就</h2>
-          <p>自製產品與商業側作品，著重資料流、互動體驗與部署。</p>
+          <h2 data-i18n="proj-title">專案成就</h2>
+          <p data-i18n="proj-desc">自製產品與商業側作品，著重資料流、互動體驗與部署。</p>
         </div>
         <div class="project-grid">
           <article class="project-card">
             <div class="project-head">
               <div>
-                <p class="label">2023/11 - 2024/1</p>
-                <h3>Tabsence · Chrome Extension</h3>
+                <p class="label" data-i18n="proj1-time">2023/11 - 進行中</p>
+                <h3 data-i18n="proj1-title">Tabsence · Chrome Extension</h3>
               </div>
               <span class="chip"
                 >TypeScript · Tailwind · DaisyUI · Zustand</span
               >
             </div>
-            <p>
-              管理瀏覽器分頁的插件，可釘選、排序與自訂空間，並追蹤網站使用時間。透過
-              chrome.tabs API
+            <p data-i18n="proj1-desc">
+              管理瀏覽器分頁的插件，可釘選、排序與自訂空間，並追蹤網站使用時間。透過 chrome.tabs API
               取得分頁資料，並以輕量狀態管理維持瀏覽器端的同步性。
             </p>
           </article>
@@ -547,18 +528,16 @@
           <article class="project-card">
             <div class="project-head">
               <div>
-                <p class="label">2023/9 - 2023/10</p>
-                <h3>STYLiSH · 電商網站</h3>
+                <p class="label" data-i18n="proj2-time">2023/9 - 2023/10</p>
+                <h3 data-i18n="proj2-title">STYLiSH · 電商網站</h3>
               </div>
               <span class="chip"
                 >React · styled-components · React Router · Firebase
                 Hosting</span
               >
             </div>
-            <p>
-              依 Figma
-              設計稿完成切版與互動，實作輪播、無限滾動、購物車等功能。採用
-              CSS-in-JS 保持元件樣式獨立，部署於 Firebase Hosting。
+            <p data-i18n="proj2-desc">
+              依 Figma 設計稿完成切版與互動，實作輪播、無限滾動、購物車等功能。採用 CSS-in-JS 保持元件樣式獨立，部署於 Firebase Hosting。
             </p>
           </article>
         </div>
@@ -566,19 +545,19 @@
 
       <section class="section" id="education">
         <div class="section-head">
-          <h2>學歷與其他</h2>
-          <p>語言背景強，能快速吸收新技術並跨國溝通。</p>
+          <h2 data-i18n="edu-title">學歷與其他</h2>
+          <p data-i18n="edu-desc">語言背景強，能快速吸收新技術並跨國溝通。</p>
         </div>
         <div class="edu-grid">
           <div class="edu-card">
-            <p class="label">2014/9 - 2018/6</p>
-            <h3>國立臺灣大學 · 外國語文學系</h3>
-            <p class="muted">學士，專注語言學與跨文化溝通。</p>
+            <p class="label" data-i18n="edu1-time">2014/9 - 2018/6</p>
+            <h3 data-i18n="edu1-title">國立臺灣大學 · 外國語文學系</h3>
+            <p class="muted" data-i18n="edu1-desc">學士，專注語言學與跨文化溝通。</p>
           </div>
           <div class="edu-card">
-            <p class="label">語言能力</p>
-            <h3>英文 TOEIC 985 · 中文、臺語</h3>
-            <p class="muted">聽說讀寫精通；能流暢撰寫技術與產品文件。</p>
+            <p class="label" data-i18n="edu2-label">語言能力</p>
+            <h3 data-i18n="edu2-title">英文 TOEIC 985 · 中文、臺語</h3>
+            <p class="muted" data-i18n="edu2-desc">聽說讀寫精通；能流暢撰寫技術與產品文件。</p>
           </div>
         </div>
       </section>
@@ -592,8 +571,8 @@
             </svg>
           </div>
           <div>
-            <p class="label">聯絡</p>
-            <p class="value">liaoleon000513@gmail.com ・ 0937-941-020</p>
+            <p class="label" data-i18n="footer-contact-label">聯絡</p>
+            <p class="value" data-i18n="footer-contact-value">liaoleon000513@gmail.com ・ 0937-941-020</p>
           </div>
         </div>
         <div class="meta-item flat">
@@ -604,12 +583,12 @@
             </svg>
           </div>
           <div>
-            <p class="label">偏好職務 / 地點</p>
-            <p class="value">前端工程師 / 軟體工程師 · 臺北 / 新北 / Remote</p>
+            <p class="label" data-i18n="footer-role-label">偏好職務 / 地點</p>
+            <p class="value" data-i18n="footer-role-value">前端工程師 / 軟體工程師 · 臺北 / 新北 / Remote</p>
           </div>
         </div>
       </footer>
-      <p class="muted footer-note">最後更新：2025</p>
+      <p class="muted footer-note" data-i18n="footer-update">最後更新：2025</p>
     </div>
     <script src="script.js"></script>
   </body>
