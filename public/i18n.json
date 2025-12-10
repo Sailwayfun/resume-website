@@ -53,7 +53,11 @@
     "footer-contact-value": "liaoleon000513@gmail.com ・ 0937-941-020",
     "footer-role-label": "偏好職務 / 地點",
     "footer-role-value": "前端工程師 / 軟體工程師 · 臺北 / 新北 / Remote",
-    "footer-update": "最後更新：2025"
+    "footer-update": "最後更新：2025",
+    "nav-experience": "經歷",
+    "nav-projects": "專案",
+    "nav-skills": "技能",
+    "nav-education": "學歷"
   },
   "en": {
     "eyebrow": "Front-end Engineer · 1-2 yrs experience",
@@ -109,6 +113,10 @@
     "footer-contact-value": "liaoleon000513@gmail.com · +886 937-941-020",
     "footer-role-label": "Preferred Roles / Location",
     "footer-role-value": "Front-end Engineer / Software Engineer · Taipei / New Taipei / Remote",
-    "footer-update": "Last updated: 2025"
+    "footer-update": "Last updated: 2025",
+    "nav-experience": "Experience",
+    "nav-projects": "Projects",
+    "nav-skills": "Skills",
+    "nav-education": "Education"
   }
 }
