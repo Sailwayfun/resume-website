@@ -280,6 +280,76 @@ h1 .sub {
   color: var(--muted);
 }
 
+.tech-strip {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  margin-bottom: 16px;
+  padding: 6px 0;
+}
+
+.tech-row {
+  position: relative;
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+}
+
+.tech-row + .tech-row {
+  margin-top: 8px;
+}
+
+.tech-track {
+  display: inline-flex;
+  gap: 10px;
+  padding: 10px 12px;
+  min-width: 200%;
+  animation: slide 24s linear infinite;
+}
+
+.tech-track.slow {
+  animation-duration: 32s;
+}
+
+.tech-row.reverse .tech-track {
+  animation-direction: reverse;
+}
+
+.tech-strip:hover .tech-track {
+  animation-play-state: paused;
+}
+
+.tech-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: rgba(77, 212, 182, 0.12);
+  border: 1px solid rgba(77, 212, 182, 0.24);
+  color: var(--accent-strong);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.chip-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.chip-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--accent-strong);
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 .skill-grid,
 .project-grid,
 .edu-grid {
