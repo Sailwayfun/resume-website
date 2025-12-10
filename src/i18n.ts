@@ -35,7 +35,7 @@ export const fallbackTranslations: Translations = {
     'exp3-list':
       '<li>維護教材內容、上架至 App 並同步改版，協調邀稿與審稿流程，確保時程與品質。</li><li>經營高中高職 YouTube 頻道，管理影片上下架與首頁版面。</li>',
     'exp4-time': '2016/8 - 2018/11',
-    'exp4-place': '臺大文理補習班',
+    'exp4-place': '台北明明補習班',
     'exp4-role': '解題老師／閱卷人員',
     'exp4-desc': '協助高中生英文解題與作文批改，提供技巧回饋。',
     'proj-title': '專案成就',
@@ -86,7 +86,7 @@ export const fallbackTranslations: Translations = {
     'exp-desc':
       'Led or contributed to admin consoles, internal systems, desktop tools, and browser extensions.',
     'exp1-time': '2024/4 - Present',
-    'exp1-place': 'Taipei · Block Tech Co., Ltd.',
+    'exp1-place': 'Taipei · BlockChain Security Corp.',
     'exp1-role': 'Front-end Engineer',
     'exp1-list':
       '<li>Built a HyperLedger blockchain admin console with Next.js App Router; accelerated UI delivery via Tailwind CSS + Figma Claude MCP.</li><li>Created MSW mock APIs and aligned contracts with backend through Swagger UI to reduce integration risk.</li><li>Developed internal personnel/case management with Vue.js + Pinia for synchronized status tracking.</li><li>Delivered internal tools with Postman Mock Server, jQuery, and Electron to speed evidence workflows.</li>',
@@ -96,12 +96,12 @@ export const fallbackTranslations: Translations = {
     'exp2-list':
       '<li>Shipped an e-commerce site in 4 weeks using React + styled-components with carousel, cart, and infinite scroll.</li><li>Built a Chrome Extension in 5 weeks with TypeScript + Zustand + Tailwind for typed stateful UI.</li><li>Guided teammates to adopt Tailwind and co-delivered new commerce features with iOS/backend in one week.</li>',
     'exp3-time': '2019/3 - 2023/8',
-    'exp3-place': 'Taipei · San Min Publishing',
+    'exp3-place': 'Taipei · San Min Book Co.,Ltd',
     'exp3-role': 'High-school English Textbook Editor',
     'exp3-list':
       '<li>Maintained and updated app content for textbook releases; coordinated authors and reviewers to meet deadlines.</li><li>Managed the YouTube channel for senior high/vocational materials, handling uploads and homepage curation.</li>',
     'exp4-time': '2016/8 - 2018/11',
-    'exp4-place': 'NTU Wen-Li Prep School',
+    'exp4-place': 'TDA School',
     'exp4-role': 'English Tutor / Essay Reviewer',
     'exp4-desc': 'Helped students solve English questions and provided feedback on essays.',
     'proj-title': 'Projects',
