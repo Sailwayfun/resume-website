@@ -39,10 +39,7 @@ export function useI18n() {
     [lang, translations]
   );
 
-  const html = useCallback(
-    (key: string) => ({ __html: t(key) }),
-    [t]
-  );
+  const html = useCallback((key: string) => ({ __html: t(key) }), [t]);
 
   const toggleLang = () => setLang((prev) => (prev === 'zh' ? 'en' : 'zh'));
 

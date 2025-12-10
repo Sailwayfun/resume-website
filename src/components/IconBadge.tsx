@@ -16,7 +16,8 @@ export function IconBadge({ children, size = 'md' }: IconBadgeProps) {
         border: '1px solid rgba(77,212,182,0.46)',
         boxShadow: '0 8px 18px rgba(77,212,182,0.32)',
       }}
-      aria-hidden="true">
+      aria-hidden="true"
+    >
       {children}
     </div>
   );

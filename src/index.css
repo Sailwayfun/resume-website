@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --bg: #0b1324;
@@ -32,10 +32,15 @@
 
 body {
   margin: 0;
-  font-family: 'Noto Sans TC', 'Space Grotesk', system-ui, -apple-system, sans-serif;
-  background: radial-gradient(circle at 20% 20%, rgba(77, 212, 182, 0.1), transparent 35%),
-    radial-gradient(circle at 80% 0%, rgba(125, 240, 218, 0.1), transparent 30%),
-    var(--bg);
+  font-family:
+    'Noto Sans TC',
+    'Space Grotesk',
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(77, 212, 182, 0.1), transparent 35%),
+    radial-gradient(circle at 80% 0%, rgba(125, 240, 218, 0.1), transparent 30%), var(--bg);
   color: var(--text);
   min-height: 100vh;
   line-height: 1.6;
@@ -44,6 +49,10 @@ body {
 }
 
 @keyframes slide {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
