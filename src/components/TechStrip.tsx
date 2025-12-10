@@ -41,6 +41,7 @@ function renderChip(label: string, icon?: string, withSvg?: boolean, key?: strin
     return (
       <div
         className={baseClass}
+        title={label}
         style={{ borderColor: 'rgba(77, 212, 182, 0.25)', color: 'var(--accent-strong)' }}
         key={key ?? `${label}-svg`}>
         {swaggerSvg}
@@ -50,6 +51,7 @@ function renderChip(label: string, icon?: string, withSvg?: boolean, key?: strin
   return (
     <div
       className={baseClass}
+      title={label}
       style={{ borderColor: 'rgba(77, 212, 182, 0.25)', color: 'var(--accent-strong)' }}
       key={key ?? `${label}-${icon}`}>
       {icon ? (
