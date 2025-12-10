@@ -114,7 +114,7 @@ export const fallbackTranslations: Translations = {
     'proj2-time': '2023/9 - 2023/10',
     'proj2-title': 'STYLiSH · E-commerce',
     'proj2-desc':
-      'Rebuilt a Figma design with React + styled-components; implemented carousel, infinite scroll, and cart; deployed on Firebase Hosting.',
+      'Build a website based on Figma design with React + styled-components; implemented carousel, infinite scroll, and cart; deployed on Firebase Hosting.',
     'edu-title': 'Education & More',
     'edu-desc': 'Strong language background; quick to learn new tech and communicate across teams.',
     'edu1-time': '2014/9 - 2018/6',

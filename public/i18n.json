@@ -100,7 +100,7 @@
     "proj1-desc": "Browser extension for tab management with pinning, sorting, spaces, and usage tracking. Uses chrome.tabs API and lightweight state for sync.",
     "proj2-time": "2023/9 - 2023/10",
     "proj2-title": "STYLiSH · E-commerce",
-    "proj2-desc": "Rebuilt a Figma design with React + styled-components; implemented carousel, infinite scroll, and cart; deployed on Firebase Hosting.",
+    "proj2-desc": "Build a website based on Figma design with React + styled-components; implemented carousel, infinite scroll, and cart; deployed on Firebase Hosting.",
     "edu-title": "Education & More",
     "edu-desc": "Strong language background; quick to learn new tech and communicate across teams.",
     "edu1-time": "2014/9 - 2018/6",
