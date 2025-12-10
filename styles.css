@@ -86,6 +86,7 @@ body {
   text-decoration: none;
   border-radius: 999px;
   transition: color 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -480,6 +481,10 @@ h1 .sub {
 
   .nav-links {
     order: 3;
+    flex-basis: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   h1 {
