@@ -91,7 +91,7 @@ function App() {
 
   return (
     <>
-      <div className="fixed inset-0 bg-gradient-to-br from-[rgba(77,212,182,0.08)] to-[rgba(55,107,255,0.05)] blur-[40px] opacity-90 pointer-events-none z-0"></div>
+      <div className="fixed inset-0 bg-gradient-to-br from-[rgba(77,212,182,0.08)] to-[rgba(55,107,255,0.05)] blur-[40px] opacity-90 pointer-events-none z-0 print-hidden"></div>
       <div className="relative z-10 max-w-[1080px] mx-auto px-7 pb-16 pt-12">
         <HeaderBar
           theme={theme}
@@ -99,6 +99,7 @@ function App() {
           nav={navItems}
           toggleLang={toggleLang}
           toggleTheme={toggleTheme}
+          onPrint={() => window.print()}
         />
 
         <Hero

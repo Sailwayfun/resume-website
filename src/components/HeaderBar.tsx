@@ -13,12 +13,13 @@ interface HeaderBarProps {
   nav: NavItem[];
   toggleTheme: () => void;
   toggleLang: () => void;
+  onPrint: () => void;
 }
 
-export function HeaderBar({ theme, lang, nav, toggleTheme, toggleLang }: HeaderBarProps) {
+export function HeaderBar({ theme, lang, nav, toggleTheme, toggleLang, onPrint }: HeaderBarProps) {
   const baseButtonStyle = {
     borderColor: 'var(--border)',
-    background: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.04)',
+    background: theme === 'dark' ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.06)',
     color: theme === 'dark' ? 'var(--accent-strong)' : 'var(--text)',
     boxShadow:
       theme === 'dark' ? '0 10px 26px rgba(77,212,182,0.35)' : '0 8px 18px rgba(0,0,0,0.08)',
@@ -26,7 +27,7 @@ export function HeaderBar({ theme, lang, nav, toggleTheme, toggleLang }: HeaderB
 
   return (
     <header
-      className="sticky top-0 backdrop-blur-md border rounded-full px-5 py-3 mb-7 flex items-center gap-4 justify-between shadow-[0_8px_24px_rgba(0,0,0,0.35)]"
+      className="sticky top-0 backdrop-blur-md border rounded-full px-5 py-3 mb-7 flex items-center gap-4 justify-between shadow-[0_8px_24px_rgba(0,0,0,0.35)] print:hidden"
       style={{ background: 'var(--panel)', borderColor: 'var(--border)' }}
     >
       <div className="font-bold tracking-[0.04em] uppercase text-[var(--text)]">Sail Liao</div>
@@ -83,6 +84,15 @@ export function HeaderBar({ theme, lang, nav, toggleTheme, toggleLang }: HeaderB
           onClick={toggleTheme}
         >
           <span aria-hidden="true">{theme === 'light' ? '☀️' : '🌙'}</span>
+        </button>
+        <button
+          className="w-28 h-10 grid place-items-center rounded-xl border text-sm font-semibold transition hover:-translate-y-[1px]"
+          style={baseButtonStyle}
+          type="button"
+          aria-label="下載 PDF"
+          onClick={onPrint}
+        >
+          下載 PDF
         </button>
       </div>
     </header>
