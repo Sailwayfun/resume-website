@@ -1,4 +1,4 @@
-import type { Lang, Translations } from './types';
+import type { Translations } from './types';
 
 export const fallbackTranslations: Translations = {
   zh: {
