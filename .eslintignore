@@ -1,0 +1,4 @@
+dist
+node_modules
+public
+scripts/download-skill-icons.mjs
