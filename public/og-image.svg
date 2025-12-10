@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1324" />
+      <stop offset="50%" stop-color="#0F213A" />
+      <stop offset="100%" stop-color="#14324F" />
+    </linearGradient>
+    <linearGradient id="a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4DD4B6" />
+      <stop offset="100%" stop-color="#7DF0DA" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="32" fill="url(#g)" />
+  <circle cx="190" cy="140" r="180" fill="#4DD4B633" />
+  <circle cx="1040" cy="40" r="220" fill="#7DF0DA22" />
+  <text x="80" y="170" fill="#7DF0DA" font-family="'Space Grotesk', 'Noto Sans TC', 'Segoe UI', sans-serif" font-size="40" font-weight="700">前端工程師</text>
+  <text x="80" y="235" fill="#E9ECF5" font-family="'Space Grotesk', 'Noto Sans TC', 'Segoe UI', sans-serif" font-size="68" font-weight="800">廖偉帆 · Sail Liao</text>
+  <text x="80" y="285" fill="#B6BED3" font-family="'Space Grotesk', 'Noto Sans TC', 'Segoe UI', sans-serif" font-size="24" font-weight="600">Next.js / React / Vue / TypeScript · 區塊鏈管理平臺與後臺經驗</text>
+  <rect x="80" y="330" width="1040" height="120" rx="18" fill="#FFFFFF08" stroke="#FFFFFF14" />
+  <text x="110" y="380" fill="#E9ECF5" font-family="'Space Grotesk', 'Noto Sans TC', 'Segoe UI', sans-serif" font-size="24" font-weight="700">亮點</text>
+  <text x="110" y="420" fill="#B6BED3" font-family="'Space Grotesk', 'Noto Sans TC', 'Segoe UI', sans-serif" font-size="20" font-weight="500">Next.js App Router · MSW Mock · Tailwind / styled-components</text>
+  <text x="110" y="445" fill="#B6BED3" font-family="'Space Grotesk', 'Noto Sans TC', 'Segoe UI', sans-serif" font-size="20" font-weight="500">Vue + Pinia · Swagger 協作 · Electron / 桌面工具</text>
+  <rect x="80" y="470" width="1040" height="70" rx="16" fill="#FFFFFF05" stroke="#FFFFFF0F" />
+  <text x="110" y="513" fill="#E9ECF5" font-family="'Space Grotesk', 'Noto Sans TC', 'Segoe UI', sans-serif" font-size="22" font-weight="700">聯絡</text>
+  <text x="200" y="513" fill="#B6BED3" font-family="'Space Grotesk', 'Noto Sans TC', 'Segoe UI', sans-serif" font-size="20" font-weight="600">liaoleon000513@gmail.com · 0937-941-020 · 臺北 / 新北 / Remote</text>
+</svg>
