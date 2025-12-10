@@ -222,6 +222,27 @@ h1 .sub {
   line-height: 1.5;
 }
 
+.contact-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  word-break: break-all;
+}
+
+.contact-icon {
+  width: 16px;
+  height: 16px;
+  fill: var(--muted);
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
 .meta-icon {
   width: 28px;
   height: 28px;
