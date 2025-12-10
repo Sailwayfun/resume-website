@@ -43,7 +43,7 @@ let translations = null;
 let currentLang = 'zh';
 const fallbackI18n = {
   zh: {
-    eyebrow: 'Front-end Engineer · 4-5 年經驗',
+    eyebrow: 'Front-end Engineer · 1-2 年經驗',
     'hero-name': '廖偉帆 <span class="sub">Sail Liao</span>',
     lede:
       '使用 Next.js、React、Vue 與 TypeScript 打造後臺、桌面工具與瀏覽器插件。熟悉 UI 開發、狀態管理、Mock API 與前後端協作，樂於將需求轉化成流暢的互動體驗。',
@@ -104,7 +104,7 @@ const fallbackI18n = {
     'footer-update': '最後更新：2025',
   },
   en: {
-    eyebrow: 'Front-end Engineer · 4-5 yrs experience',
+    eyebrow: 'Front-end Engineer · 1-2 yrs experience',
     'hero-name': 'Wei-Fan Liao <span class="sub">Sail Liao</span>',
     lede:
       'Front-end engineer building dashboards, desktop tools, and browser extensions with Next.js, React, Vue, and TypeScript. Enjoys UI implementation, state management, mock APIs, and tight collaboration with backend teams.',
