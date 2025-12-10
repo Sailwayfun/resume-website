@@ -20,7 +20,7 @@ interface HeroProps {
 
 function SailSvg() {
   return (
-    <div className="pointer-events-none absolute -right-10 -bottom-12 opacity-40">
+      <div className="pointer-events-none absolute -right-10 -bottom-12 opacity-40 print-hidden">
       <svg
         width="360"
         height="280"
