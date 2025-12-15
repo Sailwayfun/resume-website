@@ -1,0 +1,42 @@
+---
+import SectionHead from '../SectionHead.astro';
+import type { ExperienceItem } from '../../data/content';
+
+type Props = {
+  title: string;
+  desc: string;
+  items: ExperienceItem[];
+};
+
+const { title, desc, items } = Astro.props;
+---
+
+<section
+  id="experience"
+  class="mt-9 border rounded-2xl p-6 shadow-[var(--shadow)]"
+  style={{ background: 'rgba(255,255,255,0.02)', borderColor: 'var(--border)' }}
+>
+  <SectionHead title={title} desc={desc} />
+  <div class="flex flex-col gap-3">
+    {
+      items.map((item, idx) => (
+        <article
+          class="border rounded-xl p-5"
+          style={{ borderColor: 'var(--border)', background: 'rgba(255,255,255,0.02)' }}
+        >
+          <div class="flex justify-between flex-wrap gap-2 text-[13px] text-[var(--muted)]">
+            <p class="m-0">{item.time}</p>
+            <p class="m-0">{item.place}</p>
+          </div>
+          <h3 class="mt-2 mb-3 text-lg font-semibold">{item.role}</h3>
+          {item.listHtml ? (
+            <ul class="mt-0 pl-5 text-[var(--muted)] space-y-2" set:html={item.listHtml} />
+          ) : null}
+          {item.desc ? (
+            <p class="text-[var(--muted)] mt-2 mb-0 leading-relaxed">{item.desc}</p>
+          ) : null}
+        </article>
+      ))
+    }
+  </div>
+</section>
