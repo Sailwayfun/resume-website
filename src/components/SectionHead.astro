@@ -1,0 +1,9 @@
+---
+type Props = { title: string; desc: string };
+const { title, desc } = Astro.props;
+---
+
+<div class="mb-4">
+  <h2 class="text-[24px] font-semibold m-0">{title}</h2>
+  <p class="mt-2 mb-4 text-[var(--muted)]">{desc}</p>
+</div>

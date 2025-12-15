@@ -1,0 +1,20 @@
+---
+type Props = {
+  size?: 'sm' | 'md';
+};
+
+const { size = 'md' } = Astro.props;
+const sizeClass = size === 'sm' ? 'w-7 h-7' : 'w-8 h-8';
+---
+
+<div
+  class={`${sizeClass} grid place-items-center rounded-lg`}
+  style={{
+    background: 'rgba(77,212,182,0.18)',
+    border: '1px solid rgba(77,212,182,0.46)',
+    boxShadow: '0 8px 18px rgba(77,212,182,0.32)',
+  }}
+  aria-hidden="true"
+>
+  <slot />
+</div>

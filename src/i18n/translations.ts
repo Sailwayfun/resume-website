@@ -1,6 +1,6 @@
-import type { Translations } from './types';
+import type { Lang, Translations } from '../types';
 
-export const fallbackTranslations: Translations = {
+export const translations: Translations = {
   zh: {
     eyebrow: 'Front-end Engineer · 4-5 年經驗',
     'hero-name': '廖偉帆 <span class="sub">Sail Liao</span>',
@@ -89,7 +89,7 @@ export const fallbackTranslations: Translations = {
     'exp1-place': 'Taipei · BlockChain Security Corp.',
     'exp1-role': 'Front-end Engineer',
     'exp1-list':
-      '<li>Built a HyperLedger blockchain admin console with Next.js App Router; accelerated UI delivery via Tailwind CSS + Figma Claude MCP.</li><li>Created MSW mock APIs and aligned contracts with backend through Swagger UI to reduce integration risk.</li><li>Developed internal personnel/case management with Vue.js + Pinia for synchronized status tracking.</li><li>Delivered internal tools with Postman Mock Server, jQuery, and Electron to speed evidence workflows.</li>',
+      '<li>Built a HyperLedger blockchain admin console with Next.js App Router; accelerated UI delivery via Tailwind CSS + Figma Claude MCP.</li><li>Created MSW mock APIs and aligned contracts with backend through Swagger UI to reduce integration risk.</li><li>Developed internal personnel/case management with Vue.js + Pinia for synchronized status tracking.</li><li>Delivered internal tools with Postman Mock Server, jQuery, Electron to speed evidence workflows.</li>',
     'exp2-time': '2023/8 - 2024/1',
     'exp2-place': 'Taipei · AppWorks School',
     'exp2-role': 'Front-end Engineer (Bootcamp)',
@@ -114,7 +114,7 @@ export const fallbackTranslations: Translations = {
     'proj2-time': '2023/9 - 2023/10',
     'proj2-title': 'STYLiSH · E-commerce',
     'proj2-desc':
-      'Build a website based on Figma design with React + styled-components; implemented carousel, infinite scroll, and cart; deployed on Firebase Hosting.',
+      'Built a website based on Figma design with React + styled-components; implemented carousel, infinite scroll, and cart; deployed on Firebase Hosting.',
     'edu-title': 'Education & More',
     'edu-desc': 'Strong language background; quick to learn new tech and communicate across teams.',
     'edu1-time': '2014/9 - 2018/6',
@@ -135,4 +135,6 @@ export const fallbackTranslations: Translations = {
   },
 };
 
-export const TRANSLATIONS_PATH = '/i18n.json';
+export function t(lang: Lang, key: string) {
+  return translations[lang]?.[key] ?? translations.zh?.[key] ?? '';
+}

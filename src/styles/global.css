@@ -11,6 +11,11 @@
   --accent-strong: #7df0da;
   --surface: #0f192f;
   --shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+  --button-bg: rgba(255, 255, 255, 0.12);
+  --button-text: var(--accent-strong);
+  --button-shadow: 0 10px 26px rgba(77, 212, 182, 0.35);
+  --mobile-cluster-bg: rgba(255, 255, 255, 0.06);
+  --mobile-cluster-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
 :root.light {
@@ -24,6 +29,11 @@
   --accent-strong: #0da885;
   --surface: #ffffff;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  --button-bg: rgba(0, 0, 0, 0.06);
+  --button-text: var(--text);
+  --button-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  --mobile-cluster-bg: rgba(255, 255, 255, 0.75);
+  --mobile-cluster-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 * {
@@ -101,3 +111,4 @@ body {
     text-decoration: none;
   }
 }
+
