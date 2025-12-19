@@ -23,7 +23,7 @@ export const translations: Translations = {
     'exp1-place': '臺北 · 區塊科技股份有限公司',
     'exp1-role': '網頁前端工程師',
     'exp1-list':
-      '<li>以 Next.js App Router 打造 HyperLedger 區塊鏈管理平臺，Tailwind CSS 搭配 Figma Claude MCP 加速 UI 實作。</li><li>使用 MSW 建立模擬 API，並與後端透過 Swagger UI 對齊資料格式，降低正式串接成本。</li><li>以 Vue.js + Pinia 開發內部人員/案件管理系統，支援狀態同步與配置調整。</li><li>運用 Postman Mock Server、jQuery、Electron.js 產出內部工具，提升蒐證與流程效率。</li>',
+      '<li>以 Next.js App Router 打造 HyperLedger 區塊鏈管理平臺，Tailwind CSS 搭配 Figma Claude MCP 加速 UI 實作。</li><li>使用 MSW 建立模擬 API，並與後端透過 Swagger UI 對齊資料格式，降低正式串接成本。</li><li>以 Vue.js, Pinia, Postman mock api 開發內部人員/案件管理系統，支援狀態同步與配置調整。</li><li>運用 jQuery、Electron.js 產出內部工具，提升蒐證與流程效率。</li>',
     'exp2-time': '2023/8 - 2024/1',
     'exp2-place': '臺北 · AppWorks School',
     'exp2-role': '前端工程師（培訓實戰）',
@@ -89,7 +89,7 @@ export const translations: Translations = {
     'exp1-place': 'Taipei · BlockChain Security Corp.',
     'exp1-role': 'Front-end Engineer',
     'exp1-list':
-      '<li>Built a HyperLedger blockchain admin console with Next.js App Router; accelerated UI delivery via Tailwind CSS + Figma Claude MCP.</li><li>Created MSW mock APIs and aligned contracts with backend through Swagger UI to reduce integration risk.</li><li>Developed internal personnel/case management with Vue.js + Pinia for synchronized status tracking.</li><li>Delivered internal tools with Postman Mock Server, jQuery, Electron to speed evidence workflows.</li>',
+      '<li>Built a HyperLedger blockchain admin console with Next.js App Router; accelerated UI delivery via Tailwind CSS + Figma Claude MCP.</li><li>Created MSW mock APIs and aligned contracts with backend through Swagger UI to reduce integration risk.</li><li>Developed internal personnel/case management with Vue.js, Pinia, Postman mock api for synchronized status tracking.</li><li>Delivered internal tools with jQuery, Electron to speed evidence workflows.</li>',
     'exp2-time': '2023/8 - 2024/1',
     'exp2-place': 'Taipei · AppWorks School',
     'exp2-role': 'Front-end Engineer (Bootcamp)',
