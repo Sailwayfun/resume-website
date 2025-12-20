@@ -10,7 +10,7 @@ import IconBadge from '@components/IconBadge.astro';
 import ContactLines from '@components/ContactLines.astro';
 
 import { getCollection } from 'astro:content';
-import type { BaseContent, Lang, LinksContent } from '@data/content.type';
+import type { BaseContent, Lang, LinksContent } from '@content/content.type';
 
 const locale = Astro.currentLocale ?? 'zh';
 const lang: Lang = locale === 'en' ? 'en' : 'zh';

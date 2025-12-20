@@ -2,7 +2,7 @@
 import SectionHead from '../SectionHead.astro';
 import TechStrip from '../TechStrip.astro';
 import { getCollection } from 'astro:content';
-import type { Lang, SkillsContent } from '@data/content.type';
+import type { Lang, SkillsContent } from '@content/content.type';
 
 const locale = Astro.currentLocale ?? 'zh';
 const lang: Lang = locale === 'en' ? 'en' : 'zh';
