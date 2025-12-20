@@ -1,6 +1,8 @@
 ---
-type Props = { email: string };
-const { email } = Astro.props;
+import { getCollection } from 'astro:content';
+const entries = await getCollection('contact');
+const entry = entries[0];
+const email = entry?.data.email ?? '';
 ---
 
 <div class="flex flex-col gap-2 text-[var(--text)] break-all">{email}</div>

@@ -1,0 +1,35 @@
+{
+  "locale": "en",
+  "meta": {
+    "title": "Sail Liao | Front-end Engineer Resume",
+    "description": "Front-end engineer resume: Next.js, React, Vue, TypeScript, Tailwind, and admin console experience.",
+    "ogUrl": "https://resume-sail.vercel.app/en",
+    "ogImageUrl": "https://resume-sail.vercel.app/og-image.png"
+  },
+  "hero": {
+    "eyebrowHtml": "Front-end Engineer · 1-2 yrs experience",
+    "nameHtml": "Wei-Fan Liao <span class=\"sub\">Sail Liao</span>",
+    "ledeHtml": "Front-end engineer building dashboards, desktop tools, and browser extensions with Next.js, React, Vue, and TypeScript. Enjoys UI implementation, state management, mock APIs, and tight collaboration with backend teams.",
+    "locationLabel": "Location",
+    "locationValue": "Xizhi, New Taipei",
+    "contactLabel": "Contact",
+    "contactEmail": "liaoleon000513@gmail.com",
+    "titleLabel": "Target Title",
+    "titleValue": "Front-end Engineer / Software Engineer",
+    "langLabel": "Languages",
+    "langValue": "English TOEIC 985 · Intermediate Taiwanese",
+    "ctaLabel": "Email me"
+  },
+  "nav": [
+    { "href": "#experience", "label": "Experience" },
+    { "href": "#projects", "label": "Projects" },
+    { "href": "#skills", "label": "Skills" },
+    { "href": "#education", "label": "Education" }
+  ],
+  "footer": {
+    "contactLabel": "Contact",
+    "roleLabel": "Preferred Roles / Location",
+    "roleValue": "Front-end Engineer / Software Engineer · Taipei / New Taipei / Remote",
+    "updateText": "Last updated: 2025"
+  }
+}

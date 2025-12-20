@@ -1,0 +1,35 @@
+{
+  "locale": "zh",
+  "meta": {
+    "title": "廖偉帆 | 前端工程師履歷",
+    "description": "廖偉帆（Sail Liao）前端工程師履歷：Next.js、React、Vue、TypeScript、Tailwind 與區塊鏈管理後臺經驗。",
+    "ogUrl": "https://resume-sail.vercel.app",
+    "ogImageUrl": "https://resume-sail.vercel.app/og-image.png"
+  },
+  "hero": {
+    "eyebrowHtml": "Front-end Engineer · 1-2 年經驗",
+    "nameHtml": "廖偉帆 <span class=\"sub\">Sail Liao</span>",
+    "ledeHtml": "使用 Next.js、React、Vue 與 TypeScript 打造後臺、桌面工具與瀏覽器插件。熟悉 UI 開發、狀態管理、Mock API 與前後端協作，樂於將需求轉化成流暢的互動體驗。",
+    "locationLabel": "所在地",
+    "locationValue": "新北市汐止區",
+    "contactLabel": "聯絡",
+    "contactEmail": "liaoleon000513@gmail.com",
+    "titleLabel": "目標職稱",
+    "titleValue": "前端工程師 / 軟體工程師",
+    "langLabel": "語言",
+    "langValue": "英語 TOEIC 985 ・ 臺語中等",
+    "ctaLabel": "寫信給我"
+  },
+  "nav": [
+    { "href": "#experience", "label": "經歷" },
+    { "href": "#projects", "label": "專案" },
+    { "href": "#skills", "label": "技能" },
+    { "href": "#education", "label": "學歷" }
+  ],
+  "footer": {
+    "contactLabel": "聯絡",
+    "roleLabel": "偏好職務 / 地點",
+    "roleValue": "前端工程師 / 軟體工程師 · 臺北 / 新北 / Remote",
+    "updateText": "最後更新：2025"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "locale": "en",
+  "title": "Core Skills",
+  "desc": "Build maintainable front-end architecture and ship interfaces quickly with aligned APIs.",
+  "items": [
+    {
+      "label": "Frameworks",
+      "tags": ["Next.js (App Router)", "React", "Vue.js", "Pinia", "Electron.js"]
+    },
+    {
+      "label": "UI / Styling",
+      "tags": ["Tailwind CSS", "Windi CSS", "styled-components", "Figma Claude MCP"]
+    },
+    { "label": "State", "tags": ["Zustand", "Pinia", "React hooks"] },
+    {
+      "label": "API / Workflow",
+      "tags": ["MSW Mock", "Swagger", "TypeScript", "Axios/Fetch", "Postman Mock Server"]
+    },
+    { "label": "Other", "tags": ["jQuery", "Git / GitHub", "AJAX"] }
+  ]
+}

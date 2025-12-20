@@ -1,15 +1,21 @@
 ---
 import SectionHead from '../SectionHead.astro';
 import TechStrip from '../TechStrip.astro';
-import type { SkillItem } from '../../data/content';
+import { getCollection } from 'astro:content';
+import type { Lang, SkillsContent } from '@data/content.type';
 
-type Props = {
-  title: string;
-  desc: string;
-  items: SkillItem[];
-};
+const locale = Astro.currentLocale ?? 'zh';
+const lang: Lang = locale === 'en' ? 'en' : 'zh';
 
-const { title, desc, items } = Astro.props;
+const entries = await getCollection('skills');
+const defaultEntry = entries.find((entry) => entry.data.locale === 'zh');
+const currentEntry = entries.find((entry) => entry.data.locale === lang) ?? defaultEntry;
+
+if (!currentEntry) {
+  throw new Error('Missing skills content entry.');
+}
+
+const { title, desc, items } = currentEntry.data as SkillsContent;
 ---
 
 <section

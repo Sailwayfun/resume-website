@@ -1,0 +1,18 @@
+{
+  "locale": "en",
+  "title": "Education & More",
+  "desc": "Strong language background; quick to learn new tech and communicate across teams.",
+  "items": [
+    {
+      "time": "2014/9 - 2018/6",
+      "title": "National Taiwan University · Foreign Languages & Literature",
+      "desc": "B.A. focused on linguistics and cross-cultural communication."
+    },
+    {
+      "label": "Language Proficiency",
+      "time": "Language Proficiency",
+      "title": "English TOEIC 985 · Mandarin, Taiwanese",
+      "desc": "Fluent in reading/writing/speaking; comfortable drafting technical and product docs."
+    }
+  ]
+}

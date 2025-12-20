@@ -1,14 +1,20 @@
 ---
 import SectionHead from '../SectionHead.astro';
-import type { EducationItem } from '../../data/content';
+import { getCollection } from 'astro:content';
+import type { EducationContent, Lang } from '@data/content.type';
 
-type Props = {
-  title: string;
-  desc: string;
-  items: EducationItem[];
-};
+const locale = Astro.currentLocale ?? 'zh';
+const lang: Lang = locale === 'en' ? 'en' : 'zh';
 
-const { title, desc, items } = Astro.props;
+const entries = await getCollection('education');
+const defaultEntry = entries.find((entry) => entry.data.locale === 'zh');
+const currentEntry = entries.find((entry) => entry.data.locale === lang) ?? defaultEntry;
+
+if (!currentEntry) {
+  throw new Error('Missing education content entry.');
+}
+
+const { title, desc, items } = currentEntry.data as EducationContent;
 ---
 
 <section
@@ -19,7 +25,7 @@ const { title, desc, items } = Astro.props;
   <SectionHead title={title} desc={desc} />
   <div class="grid gap-3" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
     {
-      items.map((item, idx) => (
+      items.map((item) => (
         <div
           class="border rounded-xl p-4"
           style={{ borderColor: 'var(--border)', background: 'rgba(255,255,255,0.02)' }}

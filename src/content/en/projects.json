@@ -1,0 +1,19 @@
+{
+  "locale": "en",
+  "title": "Projects",
+  "desc": "Personal and commercial-facing builds focused on data flow, interactions, and deployment.",
+  "items": [
+    {
+      "time": "2023/11 - Ongoing",
+      "title": "Tabsence · Chrome Extension",
+      "desc": "Browser extension for tab management with pinning, sorting, spaces, and usage tracking. Uses chrome.tabs API and lightweight state for sync.",
+      "chip": "TypeScript · Tailwind · DaisyUI · Zustand"
+    },
+    {
+      "time": "2023/9 - 2023/10",
+      "title": "STYLiSH · E-commerce",
+      "desc": "Built a website based on Figma design with React + styled-components; implemented carousel, infinite scroll, and cart; deployed on Firebase Hosting.",
+      "chip": "React · styled-components · React Router · Firebase Hosting"
+    }
+  ]
+}
