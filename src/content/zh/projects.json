@@ -1,0 +1,19 @@
+{
+  "locale": "zh",
+  "title": "專案成就",
+  "desc": "自製產品與商業側作品，著重資料流、互動體驗與部署。",
+  "items": [
+    {
+      "time": "2023/11 - 進行中",
+      "title": "Tabsence · Chrome Extension",
+      "desc": "管理瀏覽器分頁的插件，可釘選、排序與自訂空間，並追蹤網站使用時間。透過 chrome.tabs API 取得分頁資料，並以輕量狀態管理維持瀏覽器端的同步性。",
+      "chip": "TypeScript · Tailwind · DaisyUI · Zustand"
+    },
+    {
+      "time": "2023/9 - 2023/10",
+      "title": "STYLiSH · 電商網站",
+      "desc": "依 Figma 設計稿完成切版與互動，實作輪播、無限滾動、購物車等功能。採用 CSS-in-JS 保持元件樣式獨立，部署於 Firebase Hosting。",
+      "chip": "React · styled-components · React Router · Firebase Hosting"
+    }
+  ]
+}

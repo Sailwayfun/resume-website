@@ -1,0 +1,21 @@
+{
+  "locale": "zh",
+  "title": "核心技能",
+  "desc": "打造可維護的前端架構、快速還原設計並確保串接效率。",
+  "items": [
+    {
+      "label": "前端框架",
+      "tags": ["Next.js (App Router)", "React", "Vue.js", "Pinia", "Electron.js"]
+    },
+    {
+      "label": "UI / 樣式",
+      "tags": ["Tailwind CSS", "Windi CSS", "styled-components", "Figma Claude MCP"]
+    },
+    { "label": "狀態管理", "tags": ["Zustand", "Pinia", "React hooks"] },
+    {
+      "label": "API / 開發流程",
+      "tags": ["MSW Mock", "Swagger", "TypeScript", "Axios/Fetch", "Postman Mock Server"]
+    },
+    { "label": "其他", "tags": ["jQuery", "Git / GitHub", "AJAX"] }
+  ]
+}

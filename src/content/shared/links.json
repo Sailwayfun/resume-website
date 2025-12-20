@@ -1,0 +1,14 @@
+{
+  "links": [
+    {
+      "id": "github",
+      "label": "GitHub",
+      "url": "https://github.com/Sailwayfun"
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/sailliaodev/"
+    }
+  ]
+}

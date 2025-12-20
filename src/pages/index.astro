@@ -10,21 +10,58 @@ import IconBadge from '@components/IconBadge.astro';
 import ContactLines from '@components/ContactLines.astro';
 
 import { getCollection } from 'astro:content';
-import type { ResumeContent, Lang } from '@data/content.type';
+import type {
+  BaseContent,
+  EducationContent,
+  ExperienceContent,
+  Lang,
+  LinksContent,
+  ProjectsContent,
+  SkillsContent,
+} from '@data/content.type';
+
+type LocaleCollectionName = 'base' | 'skills' | 'experience' | 'projects' | 'education';
+
+type LocaleCollectionMap = {
+  base: BaseContent;
+  skills: SkillsContent;
+  experience: ExperienceContent;
+  projects: ProjectsContent;
+  education: EducationContent;
+};
 
 const locale = Astro.currentLocale ?? 'zh';
 const lang: Lang = locale === 'en' ? 'en' : 'zh';
 
-const entries = await getCollection('resume');
-const defaultEntry = entries.find((entry) => entry.data.locale === 'zh');
-const resumeEntry = entries.find((entry) => entry.data.locale === lang) ?? defaultEntry;
+const getLocaleEntry = async <T extends LocaleCollectionName>(
+  collection: T,
+  localeValue: Lang
+): Promise<LocaleCollectionMap[T]> => {
+  const entries = await getCollection(collection);
+  const defaultEntry = entries.find((entry) => entry.data.locale === 'zh');
+  const currentEntry = entries.find((entry) => entry.data.locale === localeValue) ?? defaultEntry;
 
-if (!resumeEntry) {
-  throw new Error('Missing resume content entry.');
+  if (!currentEntry) {
+    throw new Error(`Missing ${collection} content entry.`);
+  }
+
+  return currentEntry.data as LocaleCollectionMap[T];
+};
+
+const base = await getLocaleEntry('base', lang);
+const skills = await getLocaleEntry('skills', lang);
+const experience = await getLocaleEntry('experience', lang);
+const projects = await getLocaleEntry('projects', lang);
+const education = await getLocaleEntry('education', lang);
+
+const linkEntries = await getCollection('links');
+const linkEntry = linkEntries[0];
+if (!linkEntry) {
+  throw new Error('Missing links content entry.');
 }
+const links = (linkEntry.data as LinksContent).links;
 
-const content = resumeEntry.data as ResumeContent;
-const { meta, hero, nav, sections, footer } = content;
+const { meta, hero, nav, footer } = base;
 const { title, description, ogUrl, ogImageUrl } = meta;
 ---
 
@@ -40,7 +77,7 @@ const { title, description, ogUrl, ogImageUrl } = meta;
   >
   </div>
   <div class="relative z-10 max-w-[1080px] mx-auto px-7 pb-16 pt-12">
-    <HeaderBar lang={lang} nav={nav} />
+    <HeaderBar lang={lang} nav={nav} links={links} />
 
     <Hero
       eyebrowHtml={hero.eyebrowHtml}
@@ -57,26 +94,10 @@ const { title, description, ogUrl, ogImageUrl } = meta;
       ctaLabel={hero.ctaLabel}
     />
 
-    <Skills
-      title={sections.skills.title}
-      desc={sections.skills.desc}
-      items={sections.skills.items}
-    />
-    <Experience
-      title={sections.experience.title}
-      desc={sections.experience.desc}
-      items={sections.experience.items}
-    />
-    <Projects
-      title={sections.projects.title}
-      desc={sections.projects.desc}
-      items={sections.projects.items}
-    />
-    <Education
-      title={sections.education.title}
-      desc={sections.education.desc}
-      items={sections.education.items}
-    />
+    <Skills title={skills.title} desc={skills.desc} items={skills.items} />
+    <Experience title={experience.title} desc={experience.desc} items={experience.items} />
+    <Projects title={projects.title} desc={projects.desc} items={projects.items} />
+    <Education title={education.title} desc={education.desc} items={education.items} />
 
     <footer
       class="mt-8 border rounded-xl p-5 flex flex-wrap gap-3 items-center shadow-[var(--shadow)]"

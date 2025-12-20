@@ -17,7 +17,8 @@ export type ProjectItem = { time: string; title: string; desc: string; chip: str
 
 export type EducationItem = { time: string; title: string; desc: string; label?: string };
 
-export type ResumeContent = {
+export type BaseContent = {
+  locale: Lang;
   meta: {
     title: string;
     description: string;
@@ -39,32 +40,52 @@ export type ResumeContent = {
     ctaLabel: string;
   };
   nav: NavItem[];
-  sections: {
-    skills: {
-      title: string;
-      desc: string;
-      items: SkillItem[];
-    };
-    experience: {
-      title: string;
-      desc: string;
-      items: ExperienceItem[];
-    };
-    projects: {
-      title: string;
-      desc: string;
-      items: ProjectItem[];
-    };
-    education: {
-      title: string;
-      desc: string;
-      items: EducationItem[];
-    };
-  };
   footer: {
     contactLabel: string;
     roleLabel: string;
     roleValue: string;
     updateText: string;
   };
+};
+
+export type SkillsContent = {
+  locale: Lang;
+  title: string;
+  desc: string;
+  items: SkillItem[];
+};
+
+export type ExperienceContent = {
+  locale: Lang;
+  title: string;
+  desc: string;
+  items: ExperienceItem[];
+};
+
+export type ProjectsContent = {
+  locale: Lang;
+  title: string;
+  desc: string;
+  items: ProjectItem[];
+};
+
+export type EducationContent = {
+  locale: Lang;
+  title: string;
+  desc: string;
+  items: EducationItem[];
+};
+
+export type SocialLink = {
+  id: string;
+  label: string;
+  url: string;
+};
+
+export type LinksContent = {
+  links: SocialLink[];
+};
+
+export type ContactContent = {
+  email: string;
 };
