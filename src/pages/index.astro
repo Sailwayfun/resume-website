@@ -1,35 +1,31 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import HeaderBar from '../components/HeaderBar.astro';
-import Hero from '../components/sections/Hero.astro';
-import Skills from '../components/sections/Skills.astro';
-import Experience from '../components/sections/Experience.astro';
-import Projects from '../components/sections/Projects.astro';
-import Education from '../components/sections/Education.astro';
-import IconBadge from '../components/IconBadge.astro';
-import ContactLines from '../components/ContactLines.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import HeaderBar from '@components/HeaderBar.astro';
+import Hero from '@components/sections/Hero.astro';
+import Skills from '@components/sections/Skills.astro';
+import Experience from '@components/sections/Experience.astro';
+import Projects from '@components/sections/Projects.astro';
+import Education from '@components/sections/Education.astro';
+import IconBadge from '@components/IconBadge.astro';
+import ContactLines from '@components/ContactLines.astro';
 
-import { t } from '../i18n/translations';
-import {
-  getEducationItems,
-  getExperienceItems,
-  getNav,
-  getProjectItems,
-  getSkillItems,
-} from '../data/content';
+import { getCollection } from 'astro:content';
+import type { ResumeContent, Lang } from '@data/content.type';
 
-const lang = 'zh' as const;
-const navItems = getNav(lang);
-const skillItems = getSkillItems(lang);
-const experienceItems = getExperienceItems(lang);
-const projectItems = getProjectItems(lang);
-const educationItems = getEducationItems(lang);
+const locale = Astro.currentLocale ?? 'zh';
+const lang: Lang = locale === 'en' ? 'en' : 'zh';
 
-const title = '廖偉帆 | 前端工程師履歷';
-const description =
-  '廖偉帆（Sail Liao）前端工程師履歷：Next.js、React、Vue、TypeScript、Tailwind 與區塊鏈管理後臺經驗。';
-const ogUrl = 'https://resume-sail.vercel.app';
-const ogImageUrl = `${ogUrl}/og-image.png`;
+const entries = await getCollection('resume');
+const defaultEntry = entries.find((entry) => entry.data.locale === 'zh');
+const resumeEntry = entries.find((entry) => entry.data.locale === lang) ?? defaultEntry;
+
+if (!resumeEntry) {
+  throw new Error('Missing resume content entry.');
+}
+
+const content = resumeEntry.data as ResumeContent;
+const { meta, hero, nav, sections, footer } = content;
+const { title, description, ogUrl, ogImageUrl } = meta;
 ---
 
 <BaseLayout
@@ -44,27 +40,43 @@ const ogImageUrl = `${ogUrl}/og-image.png`;
   >
   </div>
   <div class="relative z-10 max-w-[1080px] mx-auto px-7 pb-16 pt-12">
-    <HeaderBar lang={lang} nav={navItems} />
+    <HeaderBar lang={lang} nav={nav} />
 
     <Hero
-      eyebrowHtml={t(lang, 'eyebrow')}
-      nameHtml={t(lang, 'hero-name')}
-      ledeHtml={t(lang, 'lede')}
-      locationLabel={t(lang, 'meta-location-label')}
-      locationValue={t(lang, 'meta-location-value')}
-      contactLabel={t(lang, 'meta-contact-label')}
-      contactEmail={t(lang, 'contact-email')}
-      titleLabel={t(lang, 'meta-title-label')}
-      titleValue={t(lang, 'meta-title-value')}
-      langLabel={t(lang, 'meta-lang-label')}
-      langValue={t(lang, 'meta-lang-value')}
-      ctaLabel={t(lang, 'cta-primary')}
+      eyebrowHtml={hero.eyebrowHtml}
+      nameHtml={hero.nameHtml}
+      ledeHtml={hero.ledeHtml}
+      locationLabel={hero.locationLabel}
+      locationValue={hero.locationValue}
+      contactLabel={hero.contactLabel}
+      contactEmail={hero.contactEmail}
+      titleLabel={hero.titleLabel}
+      titleValue={hero.titleValue}
+      langLabel={hero.langLabel}
+      langValue={hero.langValue}
+      ctaLabel={hero.ctaLabel}
     />
 
-    <Skills title={t(lang, 'skills-title')} desc={t(lang, 'skills-desc')} items={skillItems} />
-    <Experience title={t(lang, 'exp-title')} desc={t(lang, 'exp-desc')} items={experienceItems} />
-    <Projects title={t(lang, 'proj-title')} desc={t(lang, 'proj-desc')} items={projectItems} />
-    <Education title={t(lang, 'edu-title')} desc={t(lang, 'edu-desc')} items={educationItems} />
+    <Skills
+      title={sections.skills.title}
+      desc={sections.skills.desc}
+      items={sections.skills.items}
+    />
+    <Experience
+      title={sections.experience.title}
+      desc={sections.experience.desc}
+      items={sections.experience.items}
+    />
+    <Projects
+      title={sections.projects.title}
+      desc={sections.projects.desc}
+      items={sections.projects.items}
+    />
+    <Education
+      title={sections.education.title}
+      desc={sections.education.desc}
+      items={sections.education.items}
+    />
 
     <footer
       class="mt-8 border rounded-xl p-5 flex flex-wrap gap-3 items-center shadow-[var(--shadow)]"
@@ -89,7 +101,7 @@ const ogImageUrl = `${ogUrl}/og-image.png`;
           </svg>
         </IconBadge>
         <div>
-          <p class="text-[13px] text-[var(--muted)] m-0 mb-1">{t(lang, 'footer-contact-label')}</p>
+          <p class="text-[13px] text-[var(--muted)] m-0 mb-1">{footer.contactLabel}</p>
           <ContactLines />
         </div>
       </div>
@@ -108,13 +120,13 @@ const ogImageUrl = `${ogUrl}/og-image.png`;
           </svg>
         </IconBadge>
         <div>
-          <p class="text-[13px] text-[var(--muted)] m-0 mb-1">{t(lang, 'footer-role-label')}</p>
+          <p class="text-[13px] text-[var(--muted)] m-0 mb-1">{footer.roleLabel}</p>
           <p class="m-0 font-semibold leading-6 text-[var(--text)]">
-            {t(lang, 'footer-role-value')}
+            {footer.roleValue}
           </p>
         </div>
       </div>
-      <p class="m-0 ml-auto text-[var(--muted)]">{t(lang, 'footer-update')}</p>
+      <p class="m-0 ml-auto text-[var(--muted)]">{footer.updateText}</p>
     </footer>
   </div>
 </BaseLayout>
