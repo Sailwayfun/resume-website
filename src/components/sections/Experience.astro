@@ -1,7 +1,7 @@
 ---
 import SectionHead from '../SectionHead.astro';
 import { getCollection } from 'astro:content';
-import type { ExperienceContent, Lang } from '@data/content.type';
+import type { ExperienceContent, Lang } from '@content/content.type';
 
 const locale = Astro.currentLocale ?? 'zh';
 const lang: Lang = locale === 'en' ? 'en' : 'zh';
