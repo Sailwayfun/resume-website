@@ -10,50 +10,20 @@ import IconBadge from '@components/IconBadge.astro';
 import ContactLines from '@components/ContactLines.astro';
 
 import { getCollection } from 'astro:content';
-import type {
-  BaseContent,
-  EducationContent,
-  ExperienceContent,
-  Lang,
-  LinksContent,
-  ProjectsContent,
-  SkillsContent,
-} from '@data/content.type';
-
-type LocaleCollectionName = 'base' | 'skills' | 'experience' | 'projects' | 'education';
-
-type LocaleCollectionMap = {
-  base: BaseContent;
-  skills: SkillsContent;
-  experience: ExperienceContent;
-  projects: ProjectsContent;
-  education: EducationContent;
-};
+import type { BaseContent, Lang, LinksContent } from '@data/content.type';
 
 const locale = Astro.currentLocale ?? 'zh';
 const lang: Lang = locale === 'en' ? 'en' : 'zh';
 
-const getLocaleEntry = async <T extends LocaleCollectionName>(
-  collection: T,
-  localeValue: Lang
-): Promise<LocaleCollectionMap[T]> => {
-  const entries = await getCollection(collection);
-  const defaultEntry = entries.find((entry) => entry.data.locale === 'zh');
-  const currentEntry = entries.find((entry) => entry.data.locale === localeValue) ?? defaultEntry;
+const baseEntries = await getCollection('base');
+const baseDefault = baseEntries.find((entry) => entry.data.locale === 'zh');
+const baseEntry = baseEntries.find((entry) => entry.data.locale === lang) ?? baseDefault;
 
-  if (!currentEntry) {
-    throw new Error(`Missing ${collection} content entry.`);
-  }
+if (!baseEntry) {
+  throw new Error('Missing base content entry.');
+}
 
-  return currentEntry.data as LocaleCollectionMap[T];
-};
-
-const base = await getLocaleEntry('base', lang);
-const skills = await getLocaleEntry('skills', lang);
-const experience = await getLocaleEntry('experience', lang);
-const projects = await getLocaleEntry('projects', lang);
-const education = await getLocaleEntry('education', lang);
-
+const base = baseEntry.data as BaseContent;
 const linkEntries = await getCollection('links');
 const linkEntry = linkEntries[0];
 if (!linkEntry) {
@@ -94,10 +64,10 @@ const { title, description, ogUrl, ogImageUrl } = meta;
       ctaLabel={hero.ctaLabel}
     />
 
-    <Skills title={skills.title} desc={skills.desc} items={skills.items} />
-    <Experience title={experience.title} desc={experience.desc} items={experience.items} />
-    <Projects title={projects.title} desc={projects.desc} items={projects.items} />
-    <Education title={education.title} desc={education.desc} items={education.items} />
+    <Skills />
+    <Experience />
+    <Projects />
+    <Education />
 
     <footer
       class="mt-8 border rounded-xl p-5 flex flex-wrap gap-3 items-center shadow-[var(--shadow)]"
