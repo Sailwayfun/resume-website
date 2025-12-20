@@ -10,7 +10,7 @@
 - **樣式**: [Tailwind CSS v4](https://tailwindcss.com/) - Utility-first CSS 框架
 - **語言**: [TypeScript](https://www.typescriptlang.org/) - 型別安全的 JavaScript
 - **部署**: [Vercel](https://vercel.com/) - 邊緣網路部署平台
-- **多語系**: 支援中文（預設）和英文
+- **多語系**: 支援中文（預設）和英文 (Astro i18n routing)
 
 ## 功能特色
 
@@ -30,6 +30,10 @@ sail-profolio/
 ├── src/
 │   ├── components/      # Astro 組件
 │   │   └── sections/    # 頁面區塊組件
+│   ├── content/         # Content collections
+│   │   ├── zh/           # 中文內容
+│   │   ├── en/           # 英文內容
+│   │   └── shared/       # 共用內容 (links/contact)
 │   ├── layouts/         # 頁面佈局
 │   └── pages/           # 路由頁面
 │       ├── index.astro  # 中文首頁
@@ -39,6 +43,24 @@ sail-profolio/
 ├── tsconfig.json        # TypeScript 配置
 └── package.json         # 專案依賴
 ```
+
+## Content 管理
+
+本專案改用 Astro content collections 管理內容，並依語系拆分檔案。
+
+- `src/content/zh`：中文內容
+- `src/content/en`：英文內容
+- `src/content/shared`：共用內容
+
+主要 collections：
+
+- `base`：meta / hero / nav / footer
+- `skills`：技能區塊
+- `experience`：工作經歷
+- `projects`：專案作品
+- `education`：教育背景
+- `links`：社群連結
+- `contact`：聯絡資訊
 
 ## 安裝
 
