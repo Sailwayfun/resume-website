@@ -4,6 +4,12 @@
   "desc": "自製產品與商業側作品，著重資料流、互動體驗與部署。",
   "items": [
     {
+      "time": "2025/6 - 2025/12",
+      "title": "BCJade 管理後台 · 聯盟鏈管理系統",
+      "desc": "為 HyperLedger Fabric 聯盟鏈開發管理介面，包含節點監控、智能合約部署與權限管理功能。",
+      "chip": "Next.js · TanStack Query · TypeScript · msw · Tailwind"
+    },
+    {
       "time": "2024/6 - Present",
       "title": "CT Wallet Scan · 數位鑑識工具",
       "desc": "供執法單位使用的桌面鑑識工具，可快速篩查手機、電腦及檔案中的加密貨幣證據。支援錢包地址擷取、助記詞偵測，以及交易所 App 辨識。",

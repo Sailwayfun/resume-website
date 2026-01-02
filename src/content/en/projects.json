@@ -4,6 +4,12 @@
   "desc": "Personal and commercial-facing builds focused on data flow, interactions, and deployment.",
   "items": [
     {
+      "time": "2025/6 - 2025/12",
+      "title": "BCJade Dashboard · Consortium Blockchain",
+      "desc": "Management interface for HyperLedger Fabric consortium blockchain, featuring node monitoring, smart contract deployment, and permission management.",
+      "chip": "Next.js · TanStack Query · TypeScript · msw · Tailwind"
+    },
+    {
       "time": "2024/6 - Present",
       "title": "CT Wallet Scan · Forensic Tool",
       "desc": "Desktop forensic tool for law enforcement to screen cryptocurrency evidence across mobile devices, computers, and files. Supports wallet address extraction, seed phrase detection, and exchange app identification.",
