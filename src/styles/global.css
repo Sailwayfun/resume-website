@@ -16,6 +16,12 @@
   --button-shadow: 0 10px 26px rgba(77, 212, 182, 0.35);
   --mobile-cluster-bg: rgba(255, 255, 255, 0.06);
   --mobile-cluster-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --icon-badge-bg: rgba(77, 212, 182, 0.18);
+  --icon-badge-border: rgba(77, 212, 182, 0.46);
+  --icon-badge-shadow: 0 8px 18px rgba(77, 212, 182, 0.32);
+  --accent-tag-bg: rgba(77, 212, 182, 0.12);
+  --accent-tag-border: rgba(77, 212, 182, 0.24);
+  --accent-shadow: 0 14px 28px rgba(77, 212, 182, 0.26);
 }
 
 :root.light {
@@ -34,6 +40,12 @@
   --button-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
   --mobile-cluster-bg: rgba(255, 255, 255, 0.75);
   --mobile-cluster-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  --icon-badge-bg: rgba(77, 212, 182, 0.18);
+  --icon-badge-border: rgba(77, 212, 182, 0.46);
+  --icon-badge-shadow: 0 8px 18px rgba(77, 212, 182, 0.32);
+  --accent-tag-bg: rgba(77, 212, 182, 0.12);
+  --accent-tag-border: rgba(77, 212, 182, 0.24);
+  --accent-shadow: 0 14px 28px rgba(77, 212, 182, 0.26);
 }
 
 * {
@@ -82,6 +94,12 @@ body {
     --accent-strong: #0ea5e9;
     --surface: #ffffff;
     --shadow: none;
+    --icon-badge-bg: transparent;
+    --icon-badge-border: #d0d6e1;
+    --icon-badge-shadow: none;
+    --accent-tag-bg: transparent;
+    --accent-tag-border: #d0d6e1;
+    --accent-shadow: none;
   }
   * {
     -webkit-print-color-adjust: exact;
