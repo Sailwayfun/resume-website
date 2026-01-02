@@ -110,7 +110,8 @@ const linksSchema = z.object({
         id: z.string(),
         urls: z.object({
           web: z.string().url().optional(),
-          repo: z.string().url(),
+          webLabel: z.string().optional(),
+          repo: z.string().url().optional(),
         }),
       })
     ),

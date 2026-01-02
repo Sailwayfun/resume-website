@@ -65,9 +65,8 @@ const { title, desc, items } = currentEntry.data as ProjectsContent;
             return (
               <ProjectLinks
                 web={links.urls.web}
-                webLabel="Chrome Web Store"
+                webLabel={links.urls.webLabel}
                 repo={links.urls.repo}
-                repoLabel="Repo"
               />
             );
           })()}

@@ -82,8 +82,20 @@ export type SocialLink = {
   url: string;
 };
 
+export type ProjectLink = {
+  id: string;
+  urls: {
+    web?: string;
+    webLabel?: string;
+    repo?: string;
+  };
+};
+
 export type LinksContent = {
-  links: SocialLink[];
+  links: {
+    social: SocialLink[];
+    projects: ProjectLink[];
+  };
 };
 
 export type ContactContent = {

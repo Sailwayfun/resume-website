@@ -4,6 +4,12 @@
   "desc": "自製產品與商業側作品，著重資料流、互動體驗與部署。",
   "items": [
     {
+      "time": "2024/6 - Present",
+      "title": "CT Wallet Scan · 數位鑑識工具",
+      "desc": "供執法單位使用的桌面鑑識工具，可快速篩查手機、電腦及檔案中的加密貨幣證據。支援錢包地址擷取、助記詞偵測，以及交易所 App 辨識。",
+      "chip": "jQuery · Electron · SQLite"
+    },
+    {
       "time": "2023/11 - 2024/1",
       "title": "Tabsence · Chrome Extension",
       "desc": "管理瀏覽器分頁的插件，可釘選、排序與自訂空間，並追蹤網站使用時間。透過 chrome.tabs API 取得分頁資料，並以輕量狀態管理維持瀏覽器端的同步性。",
