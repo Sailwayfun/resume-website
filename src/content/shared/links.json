@@ -1,14 +1,39 @@
 {
-  "links": [
-    {
-      "id": "github",
-      "label": "GitHub",
-      "url": "https://github.com/Sailwayfun"
-    },
-    {
-      "id": "linkedin",
-      "label": "LinkedIn",
-      "url": "https://www.linkedin.com/in/sailliaodev/"
-    }
-  ]
+  "links": {
+    "social": [
+      {
+        "id": "github",
+        "label": "GitHub",
+        "url": "https://github.com/Sailwayfun"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/sailliaodev/"
+      }
+    ],
+    "projects": [
+      {
+        "id": "CT Wallet Scan",
+        "urls": {
+          "web": "https://chainsecurity.asia/TW/ct-wallet-scan.html",
+          "webLabel": "Product Page"
+        }
+      },
+      {
+        "id": "Tabsence",
+        "urls": {
+          "web": "https://chromewebstore.google.com/detail/tabsence/icdbgchingbnboklhnagfckgjpdfjfeg",
+          "webLabel": "Chrome Web Store",
+          "repo": "https://github.com/Sailwayfun/Tabsence"
+        }
+      },
+      {
+        "id": "STYLiSH",
+        "urls": {
+          "repo": "https://github.com/Sailwayfun/STYLiSH"
+        }
+      }
+    ]
+  }
 }

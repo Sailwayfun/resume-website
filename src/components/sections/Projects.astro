@@ -1,7 +1,8 @@
 ---
 import SectionHead from '../SectionHead.astro';
+import ProjectLinks from '../ProjectLinks.astro';
 import { getCollection } from 'astro:content';
-import type { Lang, ProjectsContent } from '@content/content.type';
+import type { Lang, ProjectsContent, LinksContent } from '@content/content.type';
 
 const locale = Astro.currentLocale ?? 'zh';
 const lang: Lang = locale === 'en' ? 'en' : 'zh';
@@ -13,6 +14,17 @@ const currentEntry = entries.find((entry) => entry.data.locale === lang) ?? defa
 if (!currentEntry) {
   throw new Error('Missing projects content entry.');
 }
+
+const linkEntries = await getCollection('links');
+const linkEntry = linkEntries[0];
+if (!linkEntry) {
+  throw new Error('Missing links content entry.');
+}
+const projectLinks = (linkEntry.data as LinksContent).links.projects;
+
+const getProjectLinks = (projectTitle: string) => {
+  return projectLinks.find((link) => projectTitle.includes(link.id));
+};
 
 const { title, desc, items } = currentEntry.data as ProjectsContent;
 ---
@@ -47,6 +59,17 @@ const { title, desc, items } = currentEntry.data as ProjectsContent;
             </span>
           </div>
           <p class="mt-2 mb-0 text-[var(--muted)]">{item.desc}</p>
+          {(() => {
+            const links = getProjectLinks(item.title);
+            if (!links) return null;
+            return (
+              <ProjectLinks
+                web={links.urls.web}
+                webLabel={links.urls.webLabel}
+                repo={links.urls.repo}
+              />
+            );
+          })()}
         </article>
       ))
     }

@@ -4,7 +4,19 @@
   "desc": "自製產品與商業側作品，著重資料流、互動體驗與部署。",
   "items": [
     {
-      "time": "2023/11 - 進行中",
+      "time": "2025/6 - 2025/12",
+      "title": "BCJade 管理後台 · 聯盟鏈管理系統",
+      "desc": "為 HyperLedger Fabric 聯盟鏈開發管理介面，包含節點監控、智能合約部署與權限管理功能。",
+      "chip": "Next.js · TanStack Query · TypeScript · msw · Tailwind"
+    },
+    {
+      "time": "2024/6 - Present",
+      "title": "CT Wallet Scan · 數位鑑識工具",
+      "desc": "供執法單位使用的桌面鑑識工具，可快速篩查手機、電腦及檔案中的加密貨幣證據。支援錢包地址擷取、助記詞偵測，以及交易所 App 辨識。",
+      "chip": "jQuery · Electron · SQLite"
+    },
+    {
+      "time": "2023/11 - 2024/1",
       "title": "Tabsence · Chrome Extension",
       "desc": "管理瀏覽器分頁的插件，可釘選、排序與自訂空間，並追蹤網站使用時間。透過 chrome.tabs API 取得分頁資料，並以輕量狀態管理維持瀏覽器端的同步性。",
       "chip": "TypeScript · Tailwind · DaisyUI · Zustand"

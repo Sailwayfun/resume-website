@@ -54,6 +54,27 @@ const { lang, title, description, ogImageUrl, ogUrl } = Astro.props;
     </main>
     <script is:inline>
       (() => {
+        const SCROLL_KEY = 'lang-switch-scroll';
+
+        // Restore scroll position after language switch
+        try {
+          const savedScroll = sessionStorage.getItem(SCROLL_KEY);
+          if (savedScroll) {
+            sessionStorage.removeItem(SCROLL_KEY);
+            window.scrollTo(0, parseInt(savedScroll, 10));
+          }
+        } catch {}
+
+        // Save scroll position before language switch
+        const langLinks = document.querySelectorAll('a[aria-label="切換語言"]');
+        langLinks.forEach((link) => {
+          link.addEventListener('click', () => {
+            try {
+              sessionStorage.setItem(SCROLL_KEY, String(window.scrollY));
+            } catch {}
+          });
+        });
+
         const themeButtons = document.querySelectorAll('[data-action="toggle-theme"]');
         const printButtons = document.querySelectorAll('[data-action="print"]');
 
