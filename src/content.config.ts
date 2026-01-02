@@ -97,13 +97,24 @@ const educationSchema = localeSchema.extend({
 });
 
 const linksSchema = z.object({
-  links: z.array(
-    z.object({
-      id: z.string(),
-      label: z.string(),
-      url: z.string().url(),
-    })
-  ),
+  links: z.object({
+    social: z.array(
+      z.object({
+        id: z.string(),
+        label: z.string(),
+        url: z.string().url(),
+      })
+    ),
+    projects: z.array(
+      z.object({
+        id: z.string(),
+        urls: z.object({
+          web: z.string().url().optional(),
+          repo: z.string().url(),
+        }),
+      })
+    ),
+  }),
 });
 
 const contact = defineCollection({

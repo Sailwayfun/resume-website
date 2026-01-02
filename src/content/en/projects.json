@@ -4,7 +4,7 @@
   "desc": "Personal and commercial-facing builds focused on data flow, interactions, and deployment.",
   "items": [
     {
-      "time": "2023/11 - Ongoing",
+      "time": "2023/11 - 2024/1",
       "title": "Tabsence · Chrome Extension",
       "desc": "Browser extension for tab management with pinning, sorting, spaces, and usage tracking. Uses chrome.tabs API and lightweight state for sync.",
       "chip": "TypeScript · Tailwind · DaisyUI · Zustand"

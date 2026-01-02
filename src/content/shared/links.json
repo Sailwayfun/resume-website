@@ -1,14 +1,31 @@
 {
-  "links": [
-    {
-      "id": "github",
-      "label": "GitHub",
-      "url": "https://github.com/Sailwayfun"
-    },
-    {
-      "id": "linkedin",
-      "label": "LinkedIn",
-      "url": "https://www.linkedin.com/in/sailliaodev/"
-    }
-  ]
+  "links": {
+    "social": [
+      {
+        "id": "github",
+        "label": "GitHub",
+        "url": "https://github.com/Sailwayfun"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/sailliaodev/"
+      }
+    ],
+    "projects": [
+      {
+        "id": "Tabsence",
+        "urls": {
+          "web": "https://chromewebstore.google.com/detail/tabsence/icdbgchingbnboklhnagfckgjpdfjfeg",
+          "repo": "https://github.com/Sailwayfun/Tabsence"
+        }
+      },
+      {
+        "id": "STYLiSH",
+        "urls": {
+          "repo": "https://github.com/Sailwayfun/STYLiSH"
+        }
+      }
+    ]
+  }
 }
