@@ -9,6 +9,7 @@
     "preview": "astro preview",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write \"**/*.{ts,js,json,css,md,astro}\"",
+    "format:check": "prettier --check \"**/*.{ts,js,json,css,md,astro}\"",
     "download-skill-icons": "node scripts/download-skill-icons.mjs"
   },
   "dependencies": {
