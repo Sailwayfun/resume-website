@@ -1,0 +1,95 @@
+:root {
+  --bg: #0b1324;
+  --panel: rgba(14, 20, 35, 0.7);
+  --card: rgba(255, 255, 255, 0.04);
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #e9ecf5;
+  --muted: #b6bed3;
+  --accent: #4dd4b6;
+  --accent-strong: #7df0da;
+  --surface: #0f192f;
+  --shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+  --button-bg: rgba(255, 255, 255, 0.12);
+  --button-text: var(--accent-strong);
+  --button-shadow: 0 10px 26px rgba(77, 212, 182, 0.35);
+  --mobile-cluster-bg: rgba(255, 255, 255, 0.06);
+  --mobile-cluster-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --icon-badge-bg: rgba(77, 212, 182, 0.18);
+  --icon-badge-border: rgba(77, 212, 182, 0.46);
+  --icon-badge-shadow: 0 8px 18px rgba(77, 212, 182, 0.32);
+  --accent-tag-bg: rgba(77, 212, 182, 0.12);
+  --accent-tag-border: rgba(77, 212, 182, 0.24);
+  --accent-shadow: 0 14px 28px rgba(77, 212, 182, 0.26);
+}
+
+:root.light {
+  --bg: #f7f9fb;
+  --panel: rgba(255, 255, 255, 0.82);
+  --card: rgba(0, 0, 0, 0.03);
+  --border: rgba(0, 0, 0, 0.08);
+  --text: #0e1629;
+  --muted: #4a556b;
+  --accent: #2dbfa3;
+  --accent-strong: #0da885;
+  --surface: #ffffff;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  --button-bg: rgba(0, 0, 0, 0.06);
+  --button-text: var(--text);
+  --button-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  --mobile-cluster-bg: rgba(255, 255, 255, 0.75);
+  --mobile-cluster-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  --icon-badge-bg: rgba(77, 212, 182, 0.18);
+  --icon-badge-border: rgba(77, 212, 182, 0.46);
+  --icon-badge-shadow: 0 8px 18px rgba(77, 212, 182, 0.32);
+  --accent-tag-bg: rgba(77, 212, 182, 0.12);
+  --accent-tag-border: rgba(77, 212, 182, 0.24);
+  --accent-shadow: 0 14px 28px rgba(77, 212, 182, 0.26);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    'Noto Sans TC',
+    'Space Grotesk',
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(77, 212, 182, 0.1), transparent 35%),
+    radial-gradient(circle at 80% 0%, rgba(125, 240, 218, 0.1), transparent 30%), var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  scroll-behavior: smooth;
+}
+
+/* Smooth scroll offset for sticky header */
+html {
+  scroll-padding-top: 100px;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Respect user's motion preferences for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
