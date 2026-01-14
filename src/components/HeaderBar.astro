@@ -35,7 +35,7 @@ const socialLinks = links.social.filter((link) => link.id === 'github' || link.i
     {
       nav.map((item) => (
         <a
-          class="px-3 py-2 rounded-full text-[var(--muted)] hover:text-[var(--accent-strong)] hover:bg-[rgba(255,255,255,0.04)] transition"
+          class="px-3 py-2 rounded-full text-[var(--muted)] hover:text-[var(--accent-strong)] hover:bg-[rgba(255,255,255,0.04)] transition-all duration-200 cursor-pointer"
           href={item.href}
         >
           {item.label}
@@ -47,7 +47,7 @@ const socialLinks = links.social.filter((link) => link.id === 'github' || link.i
     {
       socialLinks.map((link) => (
         <a
-          class="w-10 h-10 grid place-items-center rounded-xl border transition hover:-translate-y-[1px]"
+          class="w-10 h-10 grid place-items-center rounded-xl border transition-all duration-200 hover:-translate-y-[1px] cursor-pointer"
           style={baseButtonStyle}
           href={link.url}
           target="_blank"
@@ -67,7 +67,7 @@ const socialLinks = links.social.filter((link) => link.id === 'github' || link.i
       ))
     }
     <a
-      class="w-11 h-10 grid place-items-center rounded-xl border text-sm font-semibold transition hover:-translate-y-[1px]"
+      class="w-11 h-10 grid place-items-center rounded-xl border text-sm font-semibold transition hover:-translate-y-[1px] cursor-pointer"
       style={baseButtonStyle}
       href={langHref}
       aria-label="切換語言"
@@ -75,7 +75,7 @@ const socialLinks = links.social.filter((link) => link.id === 'github' || link.i
       {langLabel}
     </a>
     <button
-      class="w-11 h-10 grid place-items-center rounded-xl border text-base transition hover:-translate-y-[1px]"
+      class="w-11 h-10 grid place-items-center rounded-xl border text-base transition hover:-translate-y-[1px] cursor-pointer"
       style={baseButtonStyle}
       type="button"
       aria-label="切換明暗模式"
@@ -84,7 +84,7 @@ const socialLinks = links.social.filter((link) => link.id === 'github' || link.i
       <span aria-hidden="true">◐</span>
     </button>
     <button
-      class="h-10 px-3 inline-flex items-center gap-2 rounded-xl border transition hover:-translate-y-[1px]"
+      class="h-10 px-3 inline-flex items-center gap-2 rounded-xl border transition-all duration-200 hover:-translate-y-[1px] cursor-pointer"
       style={baseButtonStyle}
       type="button"
       aria-label="下載 PDF"
@@ -113,7 +113,7 @@ const socialLinks = links.social.filter((link) => link.id === 'github' || link.i
     {
       socialLinks.map((link) => (
         <a
-          class="w-10 h-10 grid place-items-center rounded-xl border transition hover:-translate-y-[1px]"
+          class="w-10 h-10 grid place-items-center rounded-xl border transition-all duration-200 hover:-translate-y-[1px] cursor-pointer"
           style={baseButtonStyle}
           href={link.url}
           target="_blank"
@@ -133,7 +133,7 @@ const socialLinks = links.social.filter((link) => link.id === 'github' || link.i
       ))
     }
     <a
-      class="w-10 h-10 grid place-items-center rounded-xl border text-sm font-semibold transition hover:-translate-y-[1px]"
+      class="w-10 h-10 grid place-items-center rounded-xl border text-sm font-semibold transition hover:-translate-y-[1px] cursor-pointer"
       style={baseButtonStyle}
       href={langHref}
       aria-label="切換語言"
@@ -141,7 +141,7 @@ const socialLinks = links.social.filter((link) => link.id === 'github' || link.i
       {langLabel}
     </a>
     <button
-      class="w-10 h-10 grid place-items-center rounded-xl border text-base transition hover:-translate-y-[1px]"
+      class="w-10 h-10 grid place-items-center rounded-xl border text-base transition hover:-translate-y-[1px] cursor-pointer"
       style={baseButtonStyle}
       type="button"
       aria-label="切換明暗模式"
@@ -150,7 +150,7 @@ const socialLinks = links.social.filter((link) => link.id === 'github' || link.i
       <span aria-hidden="true">◐</span>
     </button>
     <button
-      class="h-10 px-3 inline-flex items-center gap-1.5 rounded-xl border transition hover:-translate-y-[1px]"
+      class="h-10 px-3 inline-flex items-center gap-1.5 rounded-xl border transition-all duration-200 hover:-translate-y-[1px] cursor-pointer"
       style={baseButtonStyle}
       type="button"
       aria-label="下載 PDF"
