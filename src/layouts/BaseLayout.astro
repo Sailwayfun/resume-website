@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import SearchModal from '@features/search/SearchModal.astro';
 
 type Props = {
   lang: 'zh' | 'en';
@@ -62,6 +63,7 @@ const { lang, title, description, ogImageUrl, ogUrl } = Astro.props;
     <main>
       <slot />
     </main>
+    <SearchModal lang={lang} />
     <script is:inline>
       (() => {
         const SCROLL_KEY = 'lang-switch-scroll';
