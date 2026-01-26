@@ -47,8 +47,16 @@ const t = i18n[lang];
     style={{ background: 'var(--panel)', borderColor: 'var(--border)' }}
   >
     <!-- Search Input -->
-    <div class="flex items-center gap-3 px-4 py-3 border-b" style={{ borderColor: 'var(--border)' }}>
-      <svg class="w-5 h-5 shrink-0" style={{ color: 'var(--muted)' }} fill="currentColor" viewBox="0 0 24 24">
+    <div
+      class="flex items-center gap-3 px-4 py-3 border-b"
+      style={{ borderColor: 'var(--border)' }}
+    >
+      <svg
+        class="w-5 h-5 shrink-0"
+        style={{ color: 'var(--muted)' }}
+        fill="currentColor"
+        viewBox="0 0 24 24"
+      >
         <path
           d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
         ></path>
@@ -80,9 +88,21 @@ const t = i18n[lang];
       class="flex items-center gap-4 px-4 py-2 border-t text-xs"
       style={{ borderColor: 'var(--border)', color: 'var(--muted)' }}
     >
-      <span><kbd class="px-1 rounded border" style={{ borderColor: 'var(--border)' }}>↑</kbd><kbd class="px-1 rounded border" style={{ borderColor: 'var(--border)' }}>↓</kbd> {t.hint.nav}</span>
-      <span><kbd class="px-1 rounded border" style={{ borderColor: 'var(--border)' }}>Enter</kbd> {t.hint.select}</span>
-      <span><kbd class="px-1 rounded border" style={{ borderColor: 'var(--border)' }}>ESC</kbd> {t.hint.close}</span>
+      <span
+        ><kbd class="px-1 rounded border" style={{ borderColor: 'var(--border)' }}>↑</kbd><kbd
+          class="px-1 rounded border"
+          style={{ borderColor: 'var(--border)' }}>↓</kbd
+        >
+        {t.hint.nav}</span
+      >
+      <span
+        ><kbd class="px-1 rounded border" style={{ borderColor: 'var(--border)' }}>Enter</kbd>
+        {t.hint.select}</span
+      >
+      <span
+        ><kbd class="px-1 rounded border" style={{ borderColor: 'var(--border)' }}>ESC</kbd>
+        {t.hint.close}</span
+      >
     </div>
   </div>
 </div>
@@ -127,6 +147,7 @@ const t = i18n[lang];
           { name: 'tags', weight: 0.25 },
           { name: 'subtitle', weight: 0.2 },
           { name: 'summary', weight: 0.15 },
+          { name: 'section', weight: 0.05 },
         ],
         threshold: 0.4,
         includeScore: true,
