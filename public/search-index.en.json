@@ -1,0 +1,226 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-01-26T03:23:58.989Z",
+  "docs": [
+    {
+      "id": "en:project:0",
+      "type": "project",
+      "lang": "en",
+      "title": "BCJade Dashboard · Consortium Blockchain",
+      "subtitle": "2025/6 - 2025/12",
+      "tags": [
+        "Next.js",
+        "TanStack Query",
+        "TypeScript",
+        "msw",
+        "Tailwind"
+      ],
+      "summary": "Management interface for HyperLedger Fabric consortium blockchain, featuring node monitoring, smart contract deployment, and permission management.",
+      "url": "/en/#projects-0",
+      "section": "Projects",
+      "rank": 90
+    },
+    {
+      "id": "en:project:1",
+      "type": "project",
+      "lang": "en",
+      "title": "CT Wallet Scan · Forensic Tool",
+      "subtitle": "2024/6 - Present",
+      "tags": [
+        "jQuery",
+        "Electron",
+        "SQLite"
+      ],
+      "summary": "Desktop forensic tool for law enforcement to screen cryptocurrency evidence across mobile devices, computers, and files. Supports wallet address extraction, seed phrase detection, and exchange app identification.",
+      "url": "/en/#projects-1",
+      "section": "Projects",
+      "rank": 90
+    },
+    {
+      "id": "en:project:2",
+      "type": "project",
+      "lang": "en",
+      "title": "Tabsence · Chrome Extension",
+      "subtitle": "2023/11 - 2024/1",
+      "tags": [
+        "TypeScript",
+        "Tailwind",
+        "DaisyUI",
+        "Zustand"
+      ],
+      "summary": "Browser extension for tab management with pinning, sorting, spaces, and usage tracking. Uses chrome.tabs API and lightweight state for sync.",
+      "url": "/en/#projects-2",
+      "section": "Projects",
+      "rank": 90
+    },
+    {
+      "id": "en:project:3",
+      "type": "project",
+      "lang": "en",
+      "title": "STYLiSH · E-commerce",
+      "subtitle": "2023/9 - 2023/10",
+      "tags": [
+        "React",
+        "styled-components",
+        "React Router",
+        "Firebase Hosting"
+      ],
+      "summary": "Built a website based on Figma design with React + styled-components; implemented carousel, infinite scroll, and cart; deployed on Firebase Hosting.",
+      "url": "/en/#projects-3",
+      "section": "Projects",
+      "rank": 90
+    },
+    {
+      "id": "en:experience:0",
+      "type": "experience",
+      "lang": "en",
+      "title": "Front-end Engineer",
+      "subtitle": "Taipei · BlockChain Security Corp.",
+      "tags": [],
+      "summary": "Built a HyperLedger blockchain admin console with Next.js App Router; accelerated UI delivery via Tailwind CSS + Figma Claude MCP. Created MSW mock APIs and aligned contracts with backend through Swagger UI to reduce integration risk. Developed internal personnel/case management with Vue.js, Pinia, Postman mock api for synchronized status tracking. Delivered internal tools with jQuery, Electron to speed evidence workflows.",
+      "url": "/en/#experience-0",
+      "section": "Experience",
+      "rank": 80
+    },
+    {
+      "id": "en:experience:1",
+      "type": "experience",
+      "lang": "en",
+      "title": "Front-end Engineer (Bootcamp)",
+      "subtitle": "Taipei · AppWorks School",
+      "tags": [],
+      "summary": "Shipped an e-commerce site in 4 weeks using React + styled-components with carousel, cart, and infinite scroll. Built a Chrome Extension in 5 weeks with TypeScript + Zustand + Tailwind for typed stateful UI. Guided teammates to adopt Tailwind and co-delivered new commerce features with iOS/backend in one week.",
+      "url": "/en/#experience-1",
+      "section": "Experience",
+      "rank": 80
+    },
+    {
+      "id": "en:experience:2",
+      "type": "experience",
+      "lang": "en",
+      "title": "High-school English Textbook Editor",
+      "subtitle": "Taipei · San Min Book Co.,Ltd",
+      "tags": [],
+      "summary": "Maintained and updated app content for textbook releases; coordinated authors and reviewers to meet deadlines. Managed the YouTube channel for senior high/vocational materials, handling uploads and homepage curation.",
+      "url": "/en/#experience-2",
+      "section": "Experience",
+      "rank": 80
+    },
+    {
+      "id": "en:experience:3",
+      "type": "experience",
+      "lang": "en",
+      "title": "English Tutor / Essay Reviewer",
+      "subtitle": "TDA School",
+      "tags": [],
+      "summary": "Helped students solve English questions and provided feedback on essays.",
+      "url": "/en/#experience-3",
+      "section": "Experience",
+      "rank": 80
+    },
+    {
+      "id": "en:skill:0",
+      "type": "skill",
+      "lang": "en",
+      "title": "Frameworks",
+      "tags": [
+        "Next.js (App Router)",
+        "React",
+        "Vue.js",
+        "Pinia",
+        "Electron.js"
+      ],
+      "summary": "Next.js (App Router), React, Vue.js, Pinia, Electron.js",
+      "url": "/en/#skills-0",
+      "section": "Skills",
+      "rank": 70
+    },
+    {
+      "id": "en:skill:1",
+      "type": "skill",
+      "lang": "en",
+      "title": "UI / Styling",
+      "tags": [
+        "Tailwind CSS",
+        "Windi CSS",
+        "styled-components",
+        "Figma Claude MCP"
+      ],
+      "summary": "Tailwind CSS, Windi CSS, styled-components, Figma Claude MCP",
+      "url": "/en/#skills-1",
+      "section": "Skills",
+      "rank": 70
+    },
+    {
+      "id": "en:skill:2",
+      "type": "skill",
+      "lang": "en",
+      "title": "State",
+      "tags": [
+        "Zustand",
+        "Pinia",
+        "React hooks"
+      ],
+      "summary": "Zustand, Pinia, React hooks",
+      "url": "/en/#skills-2",
+      "section": "Skills",
+      "rank": 70
+    },
+    {
+      "id": "en:skill:3",
+      "type": "skill",
+      "lang": "en",
+      "title": "API / Workflow",
+      "tags": [
+        "MSW Mock",
+        "Swagger",
+        "TypeScript",
+        "Axios/Fetch",
+        "Postman Mock Server"
+      ],
+      "summary": "MSW Mock, Swagger, TypeScript, Axios/Fetch, Postman Mock Server",
+      "url": "/en/#skills-3",
+      "section": "Skills",
+      "rank": 70
+    },
+    {
+      "id": "en:skill:4",
+      "type": "skill",
+      "lang": "en",
+      "title": "Other",
+      "tags": [
+        "jQuery",
+        "Git / GitHub",
+        "AJAX"
+      ],
+      "summary": "jQuery, Git / GitHub, AJAX",
+      "url": "/en/#skills-4",
+      "section": "Skills",
+      "rank": 70
+    },
+    {
+      "id": "en:education:0",
+      "type": "education",
+      "lang": "en",
+      "title": "National Taiwan University · Foreign Languages & Literature",
+      "subtitle": "2014/9 - 2018/6",
+      "tags": [],
+      "summary": "B.A. focused on linguistics and cross-cultural communication.",
+      "url": "/en/#education-0",
+      "section": "Education",
+      "rank": 60
+    },
+    {
+      "id": "en:education:1",
+      "type": "education",
+      "lang": "en",
+      "title": "English TOEIC 985 · Mandarin, Taiwanese",
+      "subtitle": "Language Proficiency",
+      "tags": [],
+      "summary": "Fluent in reading/writing/speaking; comfortable drafting technical and product docs.",
+      "url": "/en/#education-1",
+      "section": "Education",
+      "rank": 60
+    }
+  ]
+}

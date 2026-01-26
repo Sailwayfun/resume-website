@@ -1,5 +1,6 @@
 ---
 import type { NavItem, SocialLink, Lang } from '@content/content.type';
+import SearchButton from '@features/search/SearchButton.astro';
 
 type Props = {
   lang: Lang;
@@ -85,6 +86,7 @@ const socialLinks = links.social.filter((link) => link.id === 'github' || link.i
     >
       <span aria-hidden="true">◐</span>
     </button>
+    <SearchButton lang={lang} />
     <button
       class="h-10 px-3 inline-flex items-center gap-2 rounded-xl border transition-all duration-200 hover:-translate-y-[1px] cursor-pointer"
       style={baseButtonStyle}
@@ -151,6 +153,7 @@ const socialLinks = links.social.filter((link) => link.id === 'github' || link.i
     >
       <span aria-hidden="true">◐</span>
     </button>
+    <SearchButton lang={lang} />
     <button
       class="h-10 px-3 inline-flex items-center gap-1.5 rounded-xl border transition-all duration-200 hover:-translate-y-[1px] cursor-pointer"
       style={baseButtonStyle}

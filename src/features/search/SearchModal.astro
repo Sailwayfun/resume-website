@@ -1,0 +1,308 @@
+---
+import type { Lang } from '@content/content.type';
+
+type Props = {
+  lang: Lang;
+};
+
+const { lang } = Astro.props;
+
+const i18n = {
+  zh: {
+    placeholder: '搜尋專案、經歷、技能...',
+    noResults: '找不到結果',
+    hint: {
+      nav: '導航',
+      select: '選取',
+      close: '關閉',
+    },
+  },
+  en: {
+    placeholder: 'Search projects, experience, skills...',
+    noResults: 'No results found',
+    hint: {
+      nav: 'Navigate',
+      select: 'Select',
+      close: 'Close',
+    },
+  },
+};
+
+const t = i18n[lang];
+---
+
+<div
+  id="search-modal"
+  class="fixed inset-0 z-50 hidden items-center justify-center p-4 print:hidden"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Site search"
+>
+  <!-- Backdrop -->
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" data-search-backdrop></div>
+
+  <!-- Modal Content -->
+  <div
+    class="relative w-full max-w-xl rounded-2xl border shadow-2xl overflow-hidden"
+    style={{ background: 'var(--panel)', borderColor: 'var(--border)' }}
+  >
+    <!-- Search Input -->
+    <div class="flex items-center gap-3 px-4 py-3 border-b" style={{ borderColor: 'var(--border)' }}>
+      <svg class="w-5 h-5 shrink-0" style={{ color: 'var(--muted)' }} fill="currentColor" viewBox="0 0 24 24">
+        <path
+          d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+        ></path>
+      </svg>
+      <input
+        id="search-input"
+        type="text"
+        class="flex-1 bg-transparent border-0 outline-none text-base"
+        style={{ color: 'var(--text)' }}
+        placeholder={t.placeholder}
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <kbd
+        class="px-2 py-1 text-xs rounded border shrink-0"
+        style={{ borderColor: 'var(--border)', color: 'var(--muted)' }}
+      >
+        ESC
+      </kbd>
+    </div>
+
+    <!-- Results -->
+    <ul id="search-results" class="max-h-80 overflow-y-auto py-2" role="listbox">
+      <!-- Dynamic content -->
+    </ul>
+
+    <!-- Footer -->
+    <div
+      class="flex items-center gap-4 px-4 py-2 border-t text-xs"
+      style={{ borderColor: 'var(--border)', color: 'var(--muted)' }}
+    >
+      <span><kbd class="px-1 rounded border" style={{ borderColor: 'var(--border)' }}>↑</kbd><kbd class="px-1 rounded border" style={{ borderColor: 'var(--border)' }}>↓</kbd> {t.hint.nav}</span>
+      <span><kbd class="px-1 rounded border" style={{ borderColor: 'var(--border)' }}>Enter</kbd> {t.hint.select}</span>
+      <span><kbd class="px-1 rounded border" style={{ borderColor: 'var(--border)' }}>ESC</kbd> {t.hint.close}</span>
+    </div>
+  </div>
+</div>
+
+<script is:inline define:vars={{ lang, noResultsText: t.noResults }}>
+  (() => {
+    const modal = document.getElementById('search-modal');
+    const input = document.getElementById('search-input');
+    const resultsList = document.getElementById('search-results');
+    const backdrop = document.querySelector('[data-search-backdrop]');
+
+    let fuse = null;
+    let searchIndex = null;
+    let selectedIndex = -1;
+    let debounceTimer = null;
+    let currentResults = [];
+
+    // Load Fuse.js and index
+    async function loadSearch() {
+      if (fuse) return;
+
+      // Load Fuse.js from CDN if not already loaded
+      if (typeof Fuse === 'undefined') {
+        await new Promise((resolve, reject) => {
+          const script = document.createElement('script');
+          script.src = 'https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js';
+          script.onload = resolve;
+          script.onerror = reject;
+          document.head.appendChild(script);
+        });
+      }
+
+      // Load search index
+      const indexPath = `/search-index.${lang}.json`;
+      const response = await fetch(indexPath);
+      searchIndex = await response.json();
+
+      // Initialize Fuse
+      fuse = new Fuse(searchIndex.docs, {
+        keys: [
+          { name: 'title', weight: 0.4 },
+          { name: 'tags', weight: 0.25 },
+          { name: 'subtitle', weight: 0.2 },
+          { name: 'summary', weight: 0.15 },
+        ],
+        threshold: 0.4,
+        includeScore: true,
+        ignoreLocation: true,
+      });
+    }
+
+    function openModal() {
+      loadSearch();
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      input.focus();
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      input.value = '';
+      resultsList.innerHTML = '';
+      selectedIndex = -1;
+      currentResults = [];
+      document.body.style.overflow = '';
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function renderResults(results) {
+      currentResults = results;
+
+      if (results.length === 0) {
+        resultsList.innerHTML = `<li class="px-4 py-8 text-center" style="color: var(--muted)">${noResultsText}</li>`;
+        return;
+      }
+
+      // Group by section
+      const grouped = {};
+      results.forEach(({ item }) => {
+        const section = item.section;
+        if (!grouped[section]) grouped[section] = [];
+        grouped[section].push(item);
+      });
+
+      let html = '';
+      let globalIndex = 0;
+
+      for (const [section, items] of Object.entries(grouped)) {
+        html += `<li class="px-4 py-1 text-xs font-semibold uppercase tracking-wider" style="color: var(--muted)">${escapeHtml(section)}</li>`;
+
+        items.forEach((item) => {
+          const isSelected = globalIndex === selectedIndex;
+          const bgClass = isSelected ? 'background: var(--accent-tag-bg);' : '';
+
+          html += `
+            <li
+              class="px-4 py-2 cursor-pointer transition-colors"
+              style="${bgClass}"
+              role="option"
+              aria-selected="${isSelected}"
+              data-index="${globalIndex}"
+              data-url="${escapeHtml(item.url)}"
+              onmouseenter="this.style.background='rgba(255,255,255,0.04)'"
+              onmouseleave="this.style.background='${isSelected ? 'var(--accent-tag-bg)' : ''}'"
+            >
+              <div class="font-medium" style="color: var(--text)">${escapeHtml(item.title)}</div>
+              ${item.subtitle ? `<div class="text-sm" style="color: var(--muted)">${escapeHtml(item.subtitle)}</div>` : ''}
+              ${
+                item.tags?.length
+                  ? `<div class="flex flex-wrap gap-1 mt-1">${item.tags
+                      .slice(0, 3)
+                      .map(
+                        (tag) =>
+                          `<span class="text-xs px-1.5 py-0.5 rounded" style="background: var(--accent-tag-bg); color: var(--accent-strong)">${escapeHtml(tag)}</span>`
+                      )
+                      .join('')}</div>`
+                  : ''
+              }
+            </li>
+          `;
+          globalIndex++;
+        });
+      }
+
+      resultsList.innerHTML = html;
+    }
+
+    function search(query) {
+      if (!fuse || !query.trim()) {
+        resultsList.innerHTML = '';
+        currentResults = [];
+        return;
+      }
+
+      const results = fuse.search(query).slice(0, 10);
+      selectedIndex = results.length > 0 ? 0 : -1;
+      renderResults(results);
+    }
+
+    function updateSelection() {
+      const items = resultsList.querySelectorAll('[data-index]');
+      items.forEach((item, i) => {
+        const isSelected = i === selectedIndex;
+        item.style.background = isSelected ? 'var(--accent-tag-bg)' : '';
+        item.setAttribute('aria-selected', String(isSelected));
+      });
+
+      items[selectedIndex]?.scrollIntoView({ block: 'nearest' });
+    }
+
+    function navigateResults(direction) {
+      const items = resultsList.querySelectorAll('[data-index]');
+      if (items.length === 0) return;
+
+      selectedIndex = (selectedIndex + direction + items.length) % items.length;
+      updateSelection();
+    }
+
+    function selectResult() {
+      const selected = resultsList.querySelector(`[data-index="${selectedIndex}"]`);
+      if (selected) {
+        const url = selected.dataset.url;
+        closeModal();
+        window.location.href = url;
+      }
+    }
+
+    // Event Listeners
+    document.querySelectorAll('[data-action="open-search"]').forEach((btn) => {
+      btn.addEventListener('click', openModal);
+    });
+
+    backdrop?.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+      // Cmd/Ctrl + K to toggle
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        if (modal.classList.contains('hidden')) {
+          openModal();
+        } else {
+          closeModal();
+        }
+      }
+
+      // Only handle when modal is open
+      if (modal.classList.contains('hidden')) return;
+
+      if (e.key === 'Escape') {
+        closeModal();
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        navigateResults(1);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        navigateResults(-1);
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        selectResult();
+      }
+    });
+
+    input?.addEventListener('input', (e) => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => search(e.target.value), 80);
+    });
+
+    resultsList?.addEventListener('click', (e) => {
+      const item = e.target.closest('[data-url]');
+      if (item) {
+        closeModal();
+        window.location.href = item.dataset.url;
+      }
+    });
+  })();
+</script>

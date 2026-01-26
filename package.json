@@ -5,17 +5,20 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "node scripts/generate-search-index.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write \"**/*.{ts,js,json,css,md,astro}\"",
     "format:check": "prettier --check \"**/*.{ts,js,json,css,md,astro}\"",
-    "download-skill-icons": "node scripts/download-skill-icons.mjs"
+    "download-skill-icons": "node scripts/download-skill-icons.mjs",
+    "generate-search-index": "node scripts/generate-search-index.mjs"
   },
   "dependencies": {
     "@astrojs/vercel": "^8.2.7",
     "@tailwindcss/vite": "^4.1.17",
     "astro": "^5.13.5",
+    "fuse.js": "^7.1.0",
     "tailwindcss": "^4.0.0"
   },
   "devDependencies": {
