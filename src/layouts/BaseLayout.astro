@@ -11,6 +11,8 @@ type Props = {
 };
 
 const { lang, title, description, ogImageUrl, ogUrl } = Astro.props;
+const fontHref =
+  'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap';
 ---
 
 <!doctype html>
@@ -41,11 +43,12 @@ const { lang, title, description, ogImageUrl, ogUrl } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Load Noto Sans TC and Space Grotesk fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Load Noto Sans TC and Space Grotesk fonts (non-blocking) -->
+    <link rel="preload" href={fontHref} as="style" />
+    <link rel="stylesheet" href={fontHref} media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href={fontHref} />
+    </noscript>
 
     <script is:inline>
       (() => {
