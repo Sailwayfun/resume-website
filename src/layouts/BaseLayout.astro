@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import printStyles from '../styles/print.css?url';
 import SearchModal from '@features/search/SearchModal.astro';
 
 type Props = {
@@ -12,7 +13,7 @@ type Props = {
 
 const { lang, title, description, ogImageUrl, ogUrl } = Astro.props;
 const fontHref =
-  'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap';
+  'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap';
 ---
 
 <!doctype html>
@@ -49,6 +50,7 @@ const fontHref =
     <noscript>
       <link rel="stylesheet" href={fontHref} />
     </noscript>
+    <link rel="stylesheet" href={printStyles} media="print" />
 
     <script is:inline>
       (() => {
