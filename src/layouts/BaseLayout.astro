@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import printStyles from '../styles/print.css?url';
 import SearchModal from '@features/search/SearchModal.astro';
 
 type Props = {
@@ -50,7 +49,6 @@ const fontHref =
     <noscript>
       <link rel="stylesheet" href={fontHref} />
     </noscript>
-    <link rel="stylesheet" href={printStyles} media="print" />
 
     <script is:inline>
       (() => {
