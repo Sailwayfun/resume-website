@@ -1,9 +1,26 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-26T03:57:48.918Z",
+  "generatedAt": "2026-05-01T07:56:42.128Z",
   "docs": [
     {
       "id": "zh:project:0",
+      "type": "project",
+      "lang": "zh",
+      "title": "電腦組態管理工具 · AI 輔助 Prototype",
+      "subtitle": "2026/4 - Present",
+      "tags": [
+        "Nuxt",
+        ".NET",
+        "AI 文件撰寫",
+        "AI 輔助開發"
+      ],
+      "summary": "以 AI 協助整理需求、撰寫規格文件並加速 Nuxt 前端與 .NET 後端的原型開發，驗證電腦組態稽核、矯正與還原流程。",
+      "url": "/#projects-0",
+      "section": "專案成就",
+      "rank": 90
+    },
+    {
+      "id": "zh:project:1",
       "type": "project",
       "lang": "zh",
       "title": "BCJade 管理後台 · 聯盟鏈管理系統",
@@ -16,12 +33,12 @@
         "Tailwind"
       ],
       "summary": "為 HyperLedger Fabric 聯盟鏈開發管理介面，包含節點監控、智能合約部署與權限管理功能。",
-      "url": "/#projects-0",
+      "url": "/#projects-1",
       "section": "專案成就",
       "rank": 90
     },
     {
-      "id": "zh:project:1",
+      "id": "zh:project:2",
       "type": "project",
       "lang": "zh",
       "title": "CT Wallet Scan · 數位鑑識工具",
@@ -32,12 +49,12 @@
         "SQLite"
       ],
       "summary": "供執法單位使用的桌面鑑識工具，可快速篩查手機、電腦及檔案中的加密貨幣證據。支援錢包地址擷取、助記詞偵測，以及交易所 App 辨識。",
-      "url": "/#projects-1",
+      "url": "/#projects-2",
       "section": "專案成就",
       "rank": 90
     },
     {
-      "id": "zh:project:2",
+      "id": "zh:project:3",
       "type": "project",
       "lang": "zh",
       "title": "Tabsence · Chrome Extension",
@@ -49,12 +66,12 @@
         "Zustand"
       ],
       "summary": "管理瀏覽器分頁的插件，可釘選、排序與自訂空間，並追蹤網站使用時間。透過 chrome.tabs API 取得分頁資料，並以輕量狀態管理維持瀏覽器端的同步性。",
-      "url": "/#projects-2",
+      "url": "/#projects-3",
       "section": "專案成就",
       "rank": 90
     },
     {
-      "id": "zh:project:3",
+      "id": "zh:project:4",
       "type": "project",
       "lang": "zh",
       "title": "STYLiSH · 電商網站",
@@ -66,7 +83,7 @@
         "Firebase Hosting"
       ],
       "summary": "依 Figma 設計稿完成切版與互動，實作輪播、無限滾動、購物車等功能。採用 CSS-in-JS 保持元件樣式獨立，部署於 Firebase Hosting。",
-      "url": "/#projects-3",
+      "url": "/#projects-4",
       "section": "專案成就",
       "rank": 90
     },
@@ -187,6 +204,22 @@
       "id": "zh:skill:4",
       "type": "skill",
       "lang": "zh",
+      "title": "AI 應用",
+      "tags": [
+        "AI 文件撰寫",
+        "AI 輔助快速開發",
+        "需求拆解 / 規格整理",
+        "Prototype 驗證"
+      ],
+      "summary": "AI 文件撰寫, AI 輔助快速開發, 需求拆解 / 規格整理, Prototype 驗證",
+      "url": "/#skills-4",
+      "section": "核心技能",
+      "rank": 70
+    },
+    {
+      "id": "zh:skill:5",
+      "type": "skill",
+      "lang": "zh",
       "title": "其他",
       "tags": [
         "jQuery",
@@ -194,7 +227,7 @@
         "AJAX"
       ],
       "summary": "jQuery, Git / GitHub, AJAX",
-      "url": "/#skills-4",
+      "url": "/#skills-5",
       "section": "核心技能",
       "rank": 70
     },

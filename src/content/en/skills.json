@@ -16,6 +16,15 @@
       "label": "API / Workflow",
       "tags": ["MSW Mock", "Swagger", "TypeScript", "Axios/Fetch", "Postman Mock Server"]
     },
+    {
+      "label": "AI Enablement",
+      "tags": [
+        "AI-assisted documentation",
+        "AI-assisted rapid development",
+        "Spec drafting",
+        "Prototype validation"
+      ]
+    },
     { "label": "Other", "tags": ["jQuery", "Git / GitHub", "AJAX"] }
   ]
 }
