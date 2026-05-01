@@ -16,6 +16,10 @@
       "label": "API / 開發流程",
       "tags": ["MSW Mock", "Swagger", "TypeScript", "Axios/Fetch", "Postman Mock Server"]
     },
+    {
+      "label": "AI 應用",
+      "tags": ["AI 文件撰寫", "AI 輔助快速開發", "需求拆解 / 規格整理", "Prototype 驗證"]
+    },
     { "label": "其他", "tags": ["jQuery", "Git / GitHub", "AJAX"] }
   ]
 }

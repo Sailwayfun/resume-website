@@ -1,9 +1,26 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-26T03:57:48.920Z",
+  "generatedAt": "2026-05-01T07:56:42.130Z",
   "docs": [
     {
       "id": "en:project:0",
+      "type": "project",
+      "lang": "en",
+      "title": "PC Configuration Management Tool · AI-assisted Prototype",
+      "subtitle": "2026/4 - Present",
+      "tags": [
+        "Nuxt",
+        ".NET",
+        "AI-assisted documentation",
+        "AI-assisted development"
+      ],
+      "summary": "Used AI to structure requirements, draft specification documents, and accelerate a Nuxt front end with a .NET back end prototype for validating PC configuration audit, remediation, and rollback workflows.",
+      "url": "/en/#projects-0",
+      "section": "Projects",
+      "rank": 90
+    },
+    {
+      "id": "en:project:1",
       "type": "project",
       "lang": "en",
       "title": "BCJade Dashboard · Consortium Blockchain",
@@ -16,12 +33,12 @@
         "Tailwind"
       ],
       "summary": "Management interface for HyperLedger Fabric consortium blockchain, featuring node monitoring, smart contract deployment, and permission management.",
-      "url": "/en/#projects-0",
+      "url": "/en/#projects-1",
       "section": "Projects",
       "rank": 90
     },
     {
-      "id": "en:project:1",
+      "id": "en:project:2",
       "type": "project",
       "lang": "en",
       "title": "CT Wallet Scan · Forensic Tool",
@@ -32,12 +49,12 @@
         "SQLite"
       ],
       "summary": "Desktop forensic tool for law enforcement to screen cryptocurrency evidence across mobile devices, computers, and files. Supports wallet address extraction, seed phrase detection, and exchange app identification.",
-      "url": "/en/#projects-1",
+      "url": "/en/#projects-2",
       "section": "Projects",
       "rank": 90
     },
     {
-      "id": "en:project:2",
+      "id": "en:project:3",
       "type": "project",
       "lang": "en",
       "title": "Tabsence · Chrome Extension",
@@ -49,12 +66,12 @@
         "Zustand"
       ],
       "summary": "Browser extension for tab management with pinning, sorting, spaces, and usage tracking. Uses chrome.tabs API and lightweight state for sync.",
-      "url": "/en/#projects-2",
+      "url": "/en/#projects-3",
       "section": "Projects",
       "rank": 90
     },
     {
-      "id": "en:project:3",
+      "id": "en:project:4",
       "type": "project",
       "lang": "en",
       "title": "STYLiSH · E-commerce",
@@ -66,7 +83,7 @@
         "Firebase Hosting"
       ],
       "summary": "Built a website based on Figma design with React + styled-components; implemented carousel, infinite scroll, and cart; deployed on Firebase Hosting.",
-      "url": "/en/#projects-3",
+      "url": "/en/#projects-4",
       "section": "Projects",
       "rank": 90
     },
@@ -187,6 +204,22 @@
       "id": "en:skill:4",
       "type": "skill",
       "lang": "en",
+      "title": "AI Enablement",
+      "tags": [
+        "AI-assisted documentation",
+        "AI-assisted rapid development",
+        "Spec drafting",
+        "Prototype validation"
+      ],
+      "summary": "AI-assisted documentation, AI-assisted rapid development, Spec drafting, Prototype validation",
+      "url": "/en/#skills-4",
+      "section": "Skills",
+      "rank": 70
+    },
+    {
+      "id": "en:skill:5",
+      "type": "skill",
+      "lang": "en",
       "title": "Other",
       "tags": [
         "jQuery",
@@ -194,7 +227,7 @@
         "AJAX"
       ],
       "summary": "jQuery, Git / GitHub, AJAX",
-      "url": "/en/#skills-4",
+      "url": "/en/#skills-5",
       "section": "Skills",
       "rank": 70
     },
