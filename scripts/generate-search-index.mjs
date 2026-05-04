@@ -36,6 +36,29 @@ const RANK_MAP = {
   education: 60,
 };
 
+const CONTENT_SOURCES = [
+  {
+    file: 'projects.json',
+    label: 'Projects',
+    parse: parseProjects,
+  },
+  {
+    file: 'experience.json',
+    label: 'Experience',
+    parse: parseExperience,
+  },
+  {
+    file: 'skills.json',
+    label: 'Skills',
+    parse: parseSkills,
+  },
+  {
+    file: 'education.json',
+    label: 'Education',
+    parse: parseEducation,
+  },
+];
+
 /**
  * Strip HTML tags from string
  * @param {string} html
@@ -82,9 +105,51 @@ function readJson(filePath) {
   try {
     const content = fs.readFileSync(filePath, 'utf-8');
     return JSON.parse(content);
-  } catch {
-    return null;
+  } catch (err) {
+    if (err.code === 'ENOENT') {
+      return null;
+    }
+
+    throw new Error(`Unable to read JSON file: ${filePath}`, { cause: err });
   }
+}
+
+function getItems(data) {
+  return data?.items || [];
+}
+
+function logSourceCount(lang, source, data) {
+  console.log(`  [${lang}] ${source.label}: ${getItems(data).length} items`);
+}
+
+function buildDocsForLang(lang) {
+  const langDir = path.join(CONTENT_DIR, lang);
+
+  return CONTENT_SOURCES.flatMap((source) => {
+    const data = readJson(path.join(langDir, source.file));
+    if (!data) {
+      return [];
+    }
+
+    logSourceCount(lang, source, data);
+    return source.parse(data, lang);
+  });
+}
+
+function writeSearchIndex(lang, docs) {
+  const outputPath = path.join(OUTPUT_DIR, `search-index.${lang}.json`);
+  const index = {
+    version: VERSION,
+    generatedAt: new Date().toISOString(),
+    docs,
+  };
+
+  fs.writeFileSync(outputPath, JSON.stringify(index, null, 2), 'utf-8');
+  console.log(`  ✅ Generated: ${outputPath} (${docs.length} docs)\n`);
+}
+
+function parseItems(data, mapItem) {
+  return getItems(data).map(mapItem);
 }
 
 /**
@@ -94,8 +159,7 @@ function readJson(filePath) {
  * @returns {object[]}
  */
 function parseProjects(data, lang) {
-  if (!data?.items) return [];
-  return data.items.map((item, index) => ({
+  return parseItems(data, (item, index) => ({
     id: `${lang}:project:${index}`,
     type: 'project',
     lang,
@@ -116,8 +180,7 @@ function parseProjects(data, lang) {
  * @returns {object[]}
  */
 function parseExperience(data, lang) {
-  if (!data?.items) return [];
-  return data.items.map((item, index) => ({
+  return parseItems(data, (item, index) => ({
     id: `${lang}:experience:${index}`,
     type: 'experience',
     lang,
@@ -138,8 +201,7 @@ function parseExperience(data, lang) {
  * @returns {object[]}
  */
 function parseSkills(data, lang) {
-  if (!data?.items) return [];
-  return data.items.map((item, index) => ({
+  return parseItems(data, (item, index) => ({
     id: `${lang}:skill:${index}`,
     type: 'skill',
     lang,
@@ -160,8 +222,7 @@ function parseSkills(data, lang) {
  * @returns {object[]}
  */
 function parseEducation(data, lang) {
-  if (!data?.items) return [];
-  return data.items.map((item, index) => ({
+  return parseItems(data, (item, index) => ({
     id: `${lang}:education:${index}`,
     type: 'education',
     lang,
@@ -179,48 +240,7 @@ async function main() {
   console.log('🔍 Generating search index...\n');
 
   for (const lang of LANGS) {
-    const langDir = path.join(CONTENT_DIR, lang);
-    const docs = [];
-
-    // Parse projects
-    const projectsData = readJson(path.join(langDir, 'projects.json'));
-    if (projectsData) {
-      docs.push(...parseProjects(projectsData, lang));
-      console.log(`  [${lang}] Projects: ${projectsData.items?.length || 0} items`);
-    }
-
-    // Parse experience
-    const experienceData = readJson(path.join(langDir, 'experience.json'));
-    if (experienceData) {
-      docs.push(...parseExperience(experienceData, lang));
-      console.log(`  [${lang}] Experience: ${experienceData.items?.length || 0} items`);
-    }
-
-    // Parse skills
-    const skillsData = readJson(path.join(langDir, 'skills.json'));
-    if (skillsData) {
-      docs.push(...parseSkills(skillsData, lang));
-      console.log(`  [${lang}] Skills: ${skillsData.items?.length || 0} items`);
-    }
-
-    // Parse education
-    const educationData = readJson(path.join(langDir, 'education.json'));
-    if (educationData) {
-      docs.push(...parseEducation(educationData, lang));
-      console.log(`  [${lang}] Education: ${educationData.items?.length || 0} items`);
-    }
-
-    // Build index
-    const index = {
-      version: VERSION,
-      generatedAt: new Date().toISOString(),
-      docs,
-    };
-
-    // Write output
-    const outputPath = path.join(OUTPUT_DIR, `search-index.${lang}.json`);
-    fs.writeFileSync(outputPath, JSON.stringify(index, null, 2), 'utf-8');
-    console.log(`  ✅ Generated: ${outputPath} (${docs.length} docs)\n`);
+    writeSearchIndex(lang, buildDocsForLang(lang));
   }
 
   console.log('✨ Search index generation complete!');
