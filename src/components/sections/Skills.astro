@@ -125,7 +125,10 @@ const compactGroups = [
             >
               <span
                 class="w-9 h-9 inline-flex items-center justify-center rounded-lg border mb-3"
-                style={{ borderColor: 'var(--accent-tag-border)', background: 'var(--accent-tag-bg)' }}
+                style={{
+                  borderColor: 'var(--accent-tag-border)',
+                  background: 'var(--accent-tag-bg)',
+                }}
               >
                 <img
                   class="w-5 h-5 block"
@@ -183,7 +186,9 @@ const compactGroups = [
               {group.title}
             </p>
             <div class="flex flex-wrap gap-x-4 gap-y-2.5">
-              {group.tags.map((tag) => <span class="text-sm font-medium leading-5">{tag}</span>)}
+              {group.tags.map((tag) => (
+                <span class="text-sm font-medium leading-5">{tag}</span>
+              ))}
             </div>
           </div>
         ))
@@ -201,7 +206,9 @@ const compactGroups = [
             {group.title}
           </p>
           <div class="flex flex-wrap gap-x-4 gap-y-2.5">
-            {group.tags.map((tag) => <span class="text-sm font-medium leading-5">{tag}</span>)}
+            {group.tags.map((tag) => (
+              <span class="text-sm font-medium leading-5">{tag}</span>
+            ))}
           </div>
         </div>
       ))
