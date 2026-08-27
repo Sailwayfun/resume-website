@@ -148,6 +148,18 @@
     margin-bottom: 0.125rem;
   }
 
+  /* Let the Skills section use the remaining page space instead of moving as one block */
+  #skills,
+  #skills .skill-bento {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  #skills .core-skill {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
   /* Condense Experience section MORE */
   #experience > div:first-child {
     margin-bottom: 0.375rem;
@@ -257,16 +269,12 @@
     display: none !important;
   }
 
-  /* Avoid page breaks inside items */
-  section > div > div {
+  /* Keep individual resume entries together, but do not make whole sections atomic */
+  #experience article,
+  #projects article,
+  #education .grid > div {
     break-inside: avoid;
     page-break-inside: avoid;
-  }
-
-  /* Better page break control */
-  section {
-    break-after: avoid;
-    page-break-after: avoid;
   }
 
   h2,
