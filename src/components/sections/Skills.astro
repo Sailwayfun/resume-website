@@ -17,18 +17,70 @@ if (!currentEntry) {
 const { title, desc, items } = currentEntry.data as SkillsContent;
 
 const coreSkills = [
-  { label: 'Next.js', icon: 'nextjs', detail: lang === 'en' ? 'App Router · production UI' : 'App Router · 正式產品開發' },
-  { label: 'React', icon: 'react', detail: lang === 'en' ? 'Component architecture · hooks' : '元件架構 · hooks' },
-  { label: 'TypeScript', icon: 'ts', detail: lang === 'en' ? 'Typed application development' : '型別安全的應用開發' },
+  {
+    label: 'Next.js',
+    icon: 'nextjs',
+    detail: lang === 'en' ? 'App Router · production UI' : 'App Router · 正式產品開發',
+  },
+  {
+    label: 'React',
+    icon: 'react',
+    detail: lang === 'en' ? 'Components · hooks · UI state' : '元件架構 · hooks · UI 狀態',
+  },
+  {
+    label: 'TypeScript',
+    icon: 'ts',
+    detail: lang === 'en' ? 'Typed application development' : '型別安全的應用開發',
+  },
 ];
 
 const secondarySkills = [
   { label: 'Vue.js', icon: 'vue' },
   { label: 'Tailwind CSS', icon: 'tailwind' },
-  { label: 'Electron.js', icon: 'electron' },
 ];
 
-const categoryItems = items.filter((item) => item.label !== (lang === 'en' ? 'Frameworks' : '前端框架'));
+const labels =
+  lang === 'en'
+    ? {
+        ui: 'UI / Styling',
+        state: 'State',
+        api: 'API / Workflow',
+        ai: 'AI Enablement',
+        other: 'Other',
+      }
+    : {
+        ui: 'UI / 樣式',
+        state: '狀態管理',
+        api: 'API / 開發流程',
+        ai: 'AI 應用',
+        other: '其他',
+      };
+
+const getTags = (label: string) => items.find((item) => item.label === label)?.tags ?? [];
+const uiTags = getTags(labels.ui).filter((tag) => !['Tailwind CSS', 'Windi CSS'].includes(tag));
+const stateTags = getTags(labels.state);
+const apiTags = getTags(labels.api).filter((tag) => !['TypeScript', 'Axios/Fetch'].includes(tag));
+const aiTags = getTags(labels.ai);
+const otherTags = getTags(labels.other).filter((tag) => tag !== 'Git / GitHub');
+
+const compactGroups = [
+  {
+    title: lang === 'en' ? 'UI & State' : 'UI & State',
+    tags: [...stateTags, ...uiTags],
+  },
+  {
+    title: lang === 'en' ? 'Data & Tooling' : 'Data & Tooling',
+    tags: [...apiTags, 'Git / GitHub'],
+  },
+  {
+    title: lang === 'en' ? 'AI Workflow' : 'AI Workflow',
+    tags: aiTags,
+  },
+  {
+    title: lang === 'en' ? 'Legacy / Desktop' : 'Legacy / Desktop',
+    tags: ['Electron.js', ...otherTags],
+  },
+];
 ---
 
 <section
@@ -40,13 +92,13 @@ const categoryItems = items.filter((item) => item.label !== (lang === 'en' ? 'Fr
 
   <div class="grid gap-3 lg:grid-cols-12">
     <div
-      class="skill-bento skill-bento--primary border rounded-xl p-4 sm:p-5 lg:col-span-7 lg:row-span-2"
+      class="skill-bento border rounded-xl p-4 sm:p-5 lg:col-span-7"
       style={{ borderColor: 'var(--border)', background: 'rgba(255,255,255,0.02)' }}
     >
-      <div class="flex items-start justify-between gap-4 mb-5">
+      <div class="flex items-start justify-between gap-4 mb-4">
         <div>
           <p class="text-[12px] uppercase tracking-[0.16em] text-[var(--muted)] m-0">
-            {lang === 'en' ? 'Frontend Core' : 'Frontend Core'}
+            Frontend Core
           </p>
           <p class="text-sm text-[var(--muted)] mt-2 mb-0 max-w-[36rem] leading-6">
             {
@@ -64,35 +116,30 @@ const categoryItems = items.filter((item) => item.label !== (lang === 'en' ? 'Fr
         </span>
       </div>
 
-      <div class="grid gap-2.5">
+      <div class="grid gap-2.5 sm:grid-cols-3">
         {
-          coreSkills.map((skill, index) => (
+          coreSkills.map((skill) => (
             <div
-              class="core-skill flex items-center justify-between gap-3 border rounded-xl px-3.5 py-3.5 sm:px-4"
+              class="core-skill border rounded-xl p-3.5"
               style={{ borderColor: 'var(--border)', background: 'var(--card)' }}
             >
-              <div class="flex items-center gap-3 min-w-0">
-                <span
-                  class="w-10 h-10 shrink-0 inline-flex items-center justify-center rounded-xl border"
-                  style={{ borderColor: 'var(--accent-tag-border)', background: 'var(--accent-tag-bg)' }}
-                >
-                  <img
-                    class="w-6 h-6 block"
-                    src={`/skill-icons/${skill.icon}.svg`}
-                    alt=""
-                    width="24"
-                    height="24"
-                    loading="lazy"
-                  />
-                </span>
-                <span class="min-w-0">
-                  <strong class="block text-[15px] sm:text-base leading-5">{skill.label}</strong>
-                  <span class="block text-[12px] sm:text-[13px] text-[var(--muted)] mt-0.5 truncate sm:whitespace-normal">
-                    {skill.detail}
-                  </span>
-                </span>
-              </div>
-              <span class="text-[12px] font-mono text-[var(--muted)]">0{index + 1}</span>
+              <span
+                class="w-9 h-9 inline-flex items-center justify-center rounded-lg border mb-3"
+                style={{ borderColor: 'var(--accent-tag-border)', background: 'var(--accent-tag-bg)' }}
+              >
+                <img
+                  class="w-5 h-5 block"
+                  src={`/skill-icons/${skill.icon}.svg`}
+                  alt=""
+                  width="20"
+                  height="20"
+                  loading="lazy"
+                />
+              </span>
+              <strong class="block text-[15px] sm:text-base leading-5">{skill.label}</strong>
+              <span class="block text-[12px] sm:text-[13px] text-[var(--muted)] mt-1 leading-5">
+                {skill.detail}
+              </span>
             </div>
           ))
         }
@@ -124,21 +171,37 @@ const categoryItems = items.filter((item) => item.label !== (lang === 'en' ? 'Fr
       </div>
     </div>
 
+    <div class="grid gap-3 lg:col-span-5">
+      {
+        compactGroups.slice(0, 2).map((group, index) => (
+          <div
+            id={`skills-${index}`}
+            class="skill-bento border rounded-xl p-4"
+            style={{ borderColor: 'var(--border)', background: 'rgba(255,255,255,0.02)' }}
+          >
+            <p class="text-[12px] uppercase tracking-[0.12em] text-[var(--muted)] m-0 mb-3">
+              {group.title}
+            </p>
+            <div class="flex flex-wrap gap-x-4 gap-y-2.5">
+              {group.tags.map((tag) => <span class="text-sm font-medium leading-5">{tag}</span>)}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
     {
-      categoryItems.map((item, index) => (
+      compactGroups.slice(2).map((group, index) => (
         <div
-          id={`skills-${index}`}
-          class:list={[
-            'skill-bento border rounded-xl p-4 transition-all duration-200',
-            index < 2 ? 'lg:col-span-5' : 'lg:col-span-6',
-          ]}
+          id={`skills-${index + 2}`}
+          class="skill-bento border rounded-xl p-4 lg:col-span-6"
           style={{ borderColor: 'var(--border)', background: 'rgba(255,255,255,0.02)' }}
         >
           <p class="text-[12px] uppercase tracking-[0.12em] text-[var(--muted)] m-0 mb-3">
-            {item.label}
+            {group.title}
           </p>
           <div class="flex flex-wrap gap-x-4 gap-y-2.5">
-            {item.tags.map((tag) => <span class="text-sm font-medium leading-5">{tag}</span>)}
+            {group.tags.map((tag) => <span class="text-sm font-medium leading-5">{tag}</span>)}
           </div>
         </div>
       ))
@@ -165,7 +228,7 @@ const categoryItems = items.filter((item) => item.label !== (lang === 'en' ? 'Fr
 
     .core-skill:hover {
       border-color: var(--accent-tag-border) !important;
-      transform: translateX(2px);
+      transform: translateY(-1px);
     }
   }
 
